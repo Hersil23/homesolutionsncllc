@@ -133,8 +133,8 @@ main {
     line-height: 0;
     font-size: 0;
     /* Extend hero slightly to cover any subpixel gap at top/bottom */
-    margin-top: -3px;
-    padding-top: 3px;
+    margin-top: -5px;
+    padding-top: 5px;
     margin-bottom: -2px;
 }
 
