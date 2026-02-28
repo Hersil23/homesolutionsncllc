@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#303643">
 
     <!-- SEO Meta Tags -->
     <title>Home Solutions NC LLC | Professional Residential Cleaning in North Carolina</title>
@@ -16,12 +17,10 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Home Solutions NC LLC | Your Home, Our Priority">
     <meta property="og:description" content="Professional residential cleaning services in North Carolina. Deep cleaning, recurring cleaning, move-in/out, and post-construction cleaning.">
-    <!-- POR CONFIRMAR CON EL CLIENTE: Cambiar a URL absoluta cuando el dominio esté activo -->
     <meta property="og:image" content="https://www.homesolutionsncllc.com/assets/img/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
-    <!-- POR CONFIRMAR CON EL CLIENTE: og:url -->
     <meta property="og:url" content="https://www.homesolutionsncllc.com">
     <meta property="og:site_name" content="Home Solutions NC LLC">
 
@@ -34,7 +33,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 
-    <!-- Google Fonts: Playfair Display (headings) + DM Sans (body) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
@@ -70,7 +69,7 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Schema.org LocalBusiness Markup (JSON-LD) -->
+    <!-- Schema.org LocalBusiness Markup -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -99,7 +98,6 @@
     }
     </script>
 
-    <!-- Smooth Scroll -->
     <style>
         html {
             scroll-behavior: smooth;
@@ -107,21 +105,15 @@
     </style>
 </head>
 
-<body class="font-body text-almost-black overflow-x-hidden">
+<body class="font-body text-almost-black bg-[#303643] overflow-x-hidden">
 
-    <!-- ============================================== -->
-    <!-- NAVBAR - Fixed navigation bar                  -->
-    <!-- ============================================== -->
+    <!-- NAVBAR -->
     <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-
-                <!-- Logo -->
                 <a href="#hero" class="flex-shrink-0">
                     <img src="assets/img/logo.svg" alt="Home Solutions NC LLC Logo" class="h-12 w-auto" width="150" height="48">
                 </a>
-
-                <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center space-x-8">
                     <a href="#hero" class="nav-link text-white hover:text-copper transition-colors duration-300 font-medium text-sm tracking-wide">Home</a>
                     <a href="#services" class="nav-link text-white hover:text-copper transition-colors duration-300 font-medium text-sm tracking-wide">Services</a>
@@ -130,33 +122,18 @@
                     <a href="#testimonials" class="nav-link text-white hover:text-copper transition-colors duration-300 font-medium text-sm tracking-wide">Testimonials</a>
                     <a href="#contact" class="nav-link text-white hover:text-copper transition-colors duration-300 font-medium text-sm tracking-wide">Contact</a>
                 </div>
-
-                <!-- Desktop Contact Info -->
                 <div class="hidden lg:flex items-center space-x-4">
-                    <!-- POR CONFIRMAR CON EL CLIENTE: Telefono -->
                     <a href="tel:+10000000000" class="flex items-center text-white hover:text-copper transition-colors duration-300 text-sm">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                        </svg>
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                         <span class="phone-number">(000) 000-0000</span>
                     </a>
-                    <a href="#contact" class="bg-copper hover:bg-opacity-90 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 hover:shadow-lg">
-                        Free Quote
-                    </a>
+                    <a href="#contact" class="bg-copper hover:bg-opacity-90 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 hover:shadow-lg">Free Quote</a>
                 </div>
-
-                <!-- Mobile Hamburger Button -->
                 <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none" aria-label="Open mobile menu">
-                    <svg id="hamburger-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                    <svg id="close-icon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                    </svg>
+                    <svg id="hamburger-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg id="close-icon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
             </div>
-
-            <!-- Mobile Menu Dropdown -->
             <div id="mobile-menu" class="lg:hidden hidden bg-dark-1 bg-opacity-98 rounded-b-2xl pb-6 px-4">
                 <div class="flex flex-col space-y-4 pt-4">
                     <a href="#hero" class="mobile-nav-link text-white hover:text-copper transition-colors duration-300 text-base font-medium py-2 border-b border-white/10">Home</a>
@@ -167,331 +144,181 @@
                     <a href="#contact" class="mobile-nav-link text-white hover:text-copper transition-colors duration-300 text-base font-medium py-2 border-b border-white/10">Contact</a>
                 </div>
                 <div class="mt-6 flex flex-col space-y-3">
-                    <!-- POR CONFIRMAR CON EL CLIENTE: Telefono -->
                     <a href="tel:+10000000000" class="flex items-center text-white text-sm">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                        </svg>
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                         <span class="phone-number">(000) 000-0000</span>
                     </a>
-                    <!-- POR CONFIRMAR CON EL CLIENTE: Email -->
                     <a href="mailto:info@homesolutionsncllc.com" class="flex items-center text-white text-sm">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                         <span class="contact-email">info@homesolutionsncllc.com</span>
                     </a>
-                    <a href="#contact" class="bg-copper hover:bg-opacity-90 text-white px-5 py-3 rounded-lg text-sm font-semibold transition-all duration-300 text-center mt-2">
-                        Get a Free Quote
-                    </a>
+                    <a href="#contact" class="bg-copper hover:bg-opacity-90 text-white px-5 py-3 rounded-lg text-sm font-semibold transition-all duration-300 text-center mt-2">Get a Free Quote</a>
                 </div>
             </div>
         </nav>
     </header>
 
-
-    <!-- ============================================== -->
-    <!-- HERO - Full viewport with video background     -->
-    <!-- ============================================== -->
+    <!-- HERO -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-
-        <!-- Video Background -->
         <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline preload="metadata" poster="assets/img/hero-poster.jpg">
             <source src="assets/video/hero-main.mp4" type="video/mp4">
         </video>
-
-        <!-- Dark Overlay -->
         <div class="absolute inset-0 bg-dark-1 bg-opacity-60"></div>
-
-        <!-- Hero Content -->
         <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-
-            <!-- Logo Animation -->
             <div id="hero-logo" class="mb-8 opacity-0">
                 <img src="assets/img/logo.svg" alt="Home Solutions NC LLC" class="mx-auto h-24 sm:h-32 lg:h-40 w-auto" width="300" height="160">
             </div>
-
-            <!-- Headline -->
             <h1 id="hero-title" class="font-heading text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6 opacity-0">
                 Your Home, <span class="text-copper">Our Priority</span>
             </h1>
-
-            <!-- Subtitle -->
             <p id="hero-subtitle" class="text-base sm:text-xl lg:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed opacity-0">
                 Professional residential cleaning services in North Carolina. We keep your home spotless so you can enjoy what matters most.
             </p>
-
-            <!-- CTA Buttons -->
             <div id="hero-buttons" class="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0">
-                <a href="#contact" class="bg-copper hover:bg-opacity-90 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105 w-full sm:w-auto">
-                    Get a Free Quote
-                </a>
-                <a href="#services" class="border-2 border-white text-white hover:bg-white hover:text-dark-1 px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 w-full sm:w-auto">
-                    Our Services
-                </a>
+                <a href="#contact" class="bg-copper hover:bg-opacity-90 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105 w-full sm:w-auto">Get a Free Quote</a>
+                <a href="#services" class="border-2 border-white text-white hover:bg-white hover:text-dark-1 px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 w-full sm:w-auto">Our Services</a>
             </div>
         </div>
-
-        <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
             <a href="#trust-bar" class="flex flex-col items-center text-white/70 hover:text-white transition-colors duration-300" aria-label="Scroll down">
                 <span class="text-xs tracking-widest uppercase mb-2">Scroll</span>
-                <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-                </svg>
+                <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
             </a>
         </div>
     </section>
 
-
-    <!-- ============================================== -->
-    <!-- MAIN CONTENT                                   -->
-    <!-- ============================================== -->
     <main>
-
-        <!-- ============================================== -->
-        <!-- TRUST BAR - Three trust pillars               -->
-        <!-- ============================================== -->
+        <!-- TRUST BAR -->
         <section id="trust-bar" class="bg-off-white py-10 sm:py-14 lg:py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-
-                    <!-- Trust Item 1 -->
                     <div class="trust-item flex flex-col items-center text-center p-6 opacity-0">
                         <div class="w-16 h-16 bg-primary-blue/10 rounded-full flex items-center justify-center mb-5">
-                            <svg class="w-8 h-8 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-                            </svg>
+                            <svg class="w-8 h-8 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
                         </div>
                         <h3 class="font-heading text-lg font-semibold text-almost-black mb-3">Visible, Lasting Results</h3>
                         <p class="text-gray-medium text-sm leading-relaxed">Professional deep cleaning with visible, lasting results that transform your living space.</p>
                     </div>
-
-                    <!-- Trust Item 2 -->
                     <div class="trust-item flex flex-col items-center text-center p-6 opacity-0">
                         <div class="w-16 h-16 bg-primary-blue/10 rounded-full flex items-center justify-center mb-5">
-                            <svg class="w-8 h-8 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                            </svg>
+                            <svg class="w-8 h-8 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                         </div>
                         <h3 class="font-heading text-lg font-semibold text-almost-black mb-3">Licensed &amp; Insured</h3>
                         <p class="text-gray-medium text-sm leading-relaxed">Fully trained, licensed, and insured cleaning professionals you can trust in your home.</p>
                     </div>
-
-                    <!-- Trust Item 3 -->
                     <div class="trust-item flex flex-col items-center text-center p-6 opacity-0">
                         <div class="w-16 h-16 bg-primary-blue/10 rounded-full flex items-center justify-center mb-5">
-                            <svg class="w-8 h-8 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                            </svg>
+                            <svg class="w-8 h-8 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
                         </div>
                         <h3 class="font-heading text-lg font-semibold text-almost-black mb-3">Trusted by Families</h3>
                         <p class="text-gray-medium text-sm leading-relaxed">Trusted by hundreds of families across North Carolina for dependable, high-quality cleaning.</p>
                     </div>
-
                 </div>
             </div>
         </section>
 
-
-        <!-- ============================================== -->
-        <!-- SERVICES - Four service cards                  -->
-        <!-- ============================================== -->
+        <!-- SERVICES -->
         <section id="services" class="py-14 sm:py-20 lg:py-28 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                <!-- Section Header -->
                 <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-                    <h2 class="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-almost-black mb-4 sm:mb-6">
-                        Professional Cleaning Services Tailored to Your Life
-                    </h2>
-                    <p class="text-gray-medium text-base sm:text-lg leading-relaxed">
-                        We offer a comprehensive range of cleaning solutions designed to fit your unique schedule and needs, delivering a spotless finish with every visit.
-                    </p>
+                    <h2 class="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-almost-black mb-4 sm:mb-6">Professional Cleaning Services Tailored to Your Life</h2>
+                    <p class="text-gray-medium text-base sm:text-lg leading-relaxed">We offer a comprehensive range of cleaning solutions designed to fit your unique schedule and needs, delivering a spotless finish with every visit.</p>
                 </div>
-
-                <!-- Services Grid: 1 col mobile, 2 tablet, 4 desktop -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-
-                    <!-- Service Card 1: Initial Deep Cleaning -->
                     <div class="service-card group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 opacity-0">
                         <div class="service-img-wrapper relative w-full overflow-hidden rounded-t-2xl">
-                            <img src="assets/img/service-deep.jpg" alt="Professional deep cleaning service - detailed home cleaning" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="400" height="600" loading="lazy">
+                            <img src="assets/img/service-deep.jpg" alt="Professional deep cleaning service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="400" height="600" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-dark-1/80 via-dark-1/20 to-transparent"></div>
                         </div>
                         <div class="p-6">
                             <h3 class="font-heading text-xl font-bold text-almost-black mb-3">Initial Deep Cleaning</h3>
-                            <p class="text-gray-medium text-sm leading-relaxed mb-5">
-                                Comprehensive, thorough deep cleaning to help you achieve a spotless and welcoming space. We target built-up dirt and overlooked areas ensuring every corner shines.
-                            </p>
-                            <a href="https://wa.me/10000000000?text=Hi!%20I'm%20interested%20in%20your%20cleaning%20services." class="whatsapp-cta inline-flex items-center text-primary-blue hover:text-copper font-semibold text-sm transition-colors duration-300 group/link" target="_blank" rel="noopener noreferrer">
-                                Learn More
-                                <svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                                </svg>
-                            </a>
+                            <p class="text-gray-medium text-sm leading-relaxed mb-5">Comprehensive, thorough deep cleaning to help you achieve a spotless and welcoming space. We target built-up dirt and overlooked areas ensuring every corner shines.</p>
+                            <a href="https://wa.me/10000000000?text=Hi!%20I'm%20interested%20in%20your%20cleaning%20services." class="whatsapp-cta inline-flex items-center text-primary-blue hover:text-copper font-semibold text-sm transition-colors duration-300 group/link" target="_blank" rel="noopener noreferrer">Learn More<svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
                         </div>
                     </div>
-
-                    <!-- Service Card 2: Recurring Cleaning -->
                     <div class="service-card group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 opacity-0">
                         <div class="service-img-wrapper relative w-full overflow-hidden rounded-t-2xl">
-                            <img src="assets/img/service-recurring.jpg" alt="Recurring house cleaning service - weekly and bi-weekly cleaning" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="400" height="600" loading="lazy">
+                            <img src="assets/img/service-recurring.jpg" alt="Recurring house cleaning service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="400" height="600" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-dark-1/80 via-dark-1/20 to-transparent"></div>
                         </div>
                         <div class="p-6">
                             <h3 class="font-heading text-xl font-bold text-almost-black mb-3">Recurring Cleaning</h3>
-                            <p class="text-gray-medium text-sm leading-relaxed mb-5">
-                                Flexible, reliable weekly, bi-weekly, or monthly cleaning plans tailored to your schedule and preferences. Keep your home consistently fresh.
-                            </p>
-                            <a href="https://wa.me/10000000000?text=Hi!%20I'm%20interested%20in%20your%20cleaning%20services." class="whatsapp-cta inline-flex items-center text-primary-blue hover:text-copper font-semibold text-sm transition-colors duration-300 group/link" target="_blank" rel="noopener noreferrer">
-                                Learn More
-                                <svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                                </svg>
-                            </a>
+                            <p class="text-gray-medium text-sm leading-relaxed mb-5">Flexible, reliable weekly, bi-weekly, or monthly cleaning plans tailored to your schedule and preferences. Keep your home consistently fresh.</p>
+                            <a href="https://wa.me/10000000000?text=Hi!%20I'm%20interested%20in%20your%20cleaning%20services." class="whatsapp-cta inline-flex items-center text-primary-blue hover:text-copper font-semibold text-sm transition-colors duration-300 group/link" target="_blank" rel="noopener noreferrer">Learn More<svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
                         </div>
                     </div>
-
-                    <!-- Service Card 3: Move-In / Move-Out Cleaning -->
                     <div class="service-card group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 opacity-0">
                         <div class="service-img-wrapper relative w-full overflow-hidden rounded-t-2xl">
-                            <img src="assets/img/service-moveinout.jpg" alt="Move-in move-out cleaning service for relocating families" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="400" height="600" loading="lazy">
+                            <img src="assets/img/service-moveinout.jpg" alt="Move-in move-out cleaning service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="400" height="600" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-dark-1/80 via-dark-1/20 to-transparent"></div>
                         </div>
                         <div class="p-6">
                             <h3 class="font-heading text-xl font-bold text-almost-black mb-3">Move-In / Move-Out Cleaning</h3>
-                            <p class="text-gray-medium text-sm leading-relaxed mb-5">
-                                Hassle-free, professional cleaning before or after a move, with special attention to detail for your specific requirements.
-                            </p>
-                            <a href="https://wa.me/10000000000?text=Hi!%20I'm%20interested%20in%20your%20cleaning%20services." class="whatsapp-cta inline-flex items-center text-primary-blue hover:text-copper font-semibold text-sm transition-colors duration-300 group/link" target="_blank" rel="noopener noreferrer">
-                                Learn More
-                                <svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                                </svg>
-                            </a>
+                            <p class="text-gray-medium text-sm leading-relaxed mb-5">Hassle-free, professional cleaning before or after a move, with special attention to detail for your specific requirements.</p>
+                            <a href="https://wa.me/10000000000?text=Hi!%20I'm%20interested%20in%20your%20cleaning%20services." class="whatsapp-cta inline-flex items-center text-primary-blue hover:text-copper font-semibold text-sm transition-colors duration-300 group/link" target="_blank" rel="noopener noreferrer">Learn More<svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
                         </div>
                     </div>
-
-                    <!-- Service Card 4: Post-Construction Cleaning -->
                     <div class="service-card group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 opacity-0">
                         <div class="service-img-wrapper relative w-full overflow-hidden rounded-t-2xl">
-                            <img src="assets/img/service-postconstruction.jpg" alt="Post construction cleaning service - debris and dust removal" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="400" height="600" loading="lazy">
+                            <img src="assets/img/service-postconstruction.jpg" alt="Post construction cleaning service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width="400" height="600" loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-dark-1/80 via-dark-1/20 to-transparent"></div>
                         </div>
                         <div class="p-6">
                             <h3 class="font-heading text-xl font-bold text-almost-black mb-3">Post-Construction Cleaning</h3>
-                            <p class="text-gray-medium text-sm leading-relaxed mb-5">
-                                Specialized cleaning after renovations or new builds. We remove construction dust, debris, and residue to make your space move-in ready.
-                            </p>
-                            <a href="https://wa.me/10000000000?text=Hi!%20I'm%20interested%20in%20your%20cleaning%20services." class="whatsapp-cta inline-flex items-center text-primary-blue hover:text-copper font-semibold text-sm transition-colors duration-300 group/link" target="_blank" rel="noopener noreferrer">
-                                Learn More
-                                <svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                                </svg>
-                            </a>
+                            <p class="text-gray-medium text-sm leading-relaxed mb-5">Specialized cleaning after renovations or new builds. We remove construction dust, debris, and residue to make your space move-in ready.</p>
+                            <a href="https://wa.me/10000000000?text=Hi!%20I'm%20interested%20in%20your%20cleaning%20services." class="whatsapp-cta inline-flex items-center text-primary-blue hover:text-copper font-semibold text-sm transition-colors duration-300 group/link" target="_blank" rel="noopener noreferrer">Learn More<svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-
-        <!-- ============================================== -->
-        <!-- HOW IT WORKS - 4 steps process                -->
-        <!-- ============================================== -->
+        <!-- HOW IT WORKS -->
         <section id="how-it-works" class="py-14 sm:py-20 lg:py-28 bg-off-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                <!-- Section Header -->
                 <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-                    <h2 class="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-almost-black mb-4 sm:mb-6">
-                        Your Spotless Home Is Just 4 Steps Away
-                    </h2>
+                    <h2 class="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-almost-black mb-4 sm:mb-6">Your Spotless Home Is Just 4 Steps Away</h2>
                 </div>
-
-                <!-- Steps Container -->
                 <div class="relative">
-
-                    <!-- Connecting Line (Desktop Only) -->
                     <div class="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-0.5 bg-primary-blue/20"></div>
-
-                    <!-- Steps Grid -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-
-                        <!-- Step 1 -->
                         <div class="step-item flex flex-col items-center text-center relative opacity-0">
-                            <div class="w-14 h-14 bg-primary-blue text-white rounded-full flex items-center justify-center text-xl font-bold font-heading mb-6 relative z-10 shadow-lg">
-                                1
-                            </div>
+                            <div class="w-14 h-14 bg-primary-blue text-white rounded-full flex items-center justify-center text-xl font-bold font-heading mb-6 relative z-10 shadow-lg">1</div>
                             <h3 class="font-heading text-lg font-bold text-almost-black mb-3">Get a Free Quote</h3>
                             <p class="text-gray-medium text-sm leading-relaxed">Complete the form below for a quick estimate.</p>
                         </div>
-
-                        <!-- Step 2 -->
                         <div class="step-item flex flex-col items-center text-center relative opacity-0">
-                            <div class="w-14 h-14 bg-primary-blue text-white rounded-full flex items-center justify-center text-xl font-bold font-heading mb-6 relative z-10 shadow-lg">
-                                2
-                            </div>
+                            <div class="w-14 h-14 bg-primary-blue text-white rounded-full flex items-center justify-center text-xl font-bold font-heading mb-6 relative z-10 shadow-lg">2</div>
                             <h3 class="font-heading text-lg font-bold text-almost-black mb-3">Schedule Your Cleaning</h3>
                             <p class="text-gray-medium text-sm leading-relaxed">Pick the date and time that works best for you.</p>
                         </div>
-
-                        <!-- Step 3 -->
                         <div class="step-item flex flex-col items-center text-center relative opacity-0">
-                            <div class="w-14 h-14 bg-primary-blue text-white rounded-full flex items-center justify-center text-xl font-bold font-heading mb-6 relative z-10 shadow-lg">
-                                3
-                            </div>
+                            <div class="w-14 h-14 bg-primary-blue text-white rounded-full flex items-center justify-center text-xl font-bold font-heading mb-6 relative z-10 shadow-lg">3</div>
                             <h3 class="font-heading text-lg font-bold text-almost-black mb-3">Customize Your Service</h3>
                             <p class="text-gray-medium text-sm leading-relaxed">Tell us your home's needs — we'll tailor the cleaning to you.</p>
                         </div>
-
-                        <!-- Step 4 -->
                         <div class="step-item flex flex-col items-center text-center relative opacity-0">
-                            <div class="w-14 h-14 bg-copper text-white rounded-full flex items-center justify-center text-xl font-bold font-heading mb-6 relative z-10 shadow-lg">
-                                4
-                            </div>
+                            <div class="w-14 h-14 bg-copper text-white rounded-full flex items-center justify-center text-xl font-bold font-heading mb-6 relative z-10 shadow-lg">4</div>
                             <h3 class="font-heading text-lg font-bold text-almost-black mb-3">Relax While We Clean</h3>
                             <p class="text-gray-medium text-sm leading-relaxed">Our trained team handles everything and leaves your home spotless.</p>
                         </div>
-
                     </div>
                 </div>
-
-                <!-- CTA Button -->
                 <div class="text-center mt-14">
-                    <a href="#contact" class="inline-flex items-center bg-copper hover:bg-opacity-90 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105">
-                        Get My Free Quote
-                        <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                        </svg>
-                    </a>
+                    <a href="#contact" class="inline-flex items-center bg-copper hover:bg-opacity-90 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105">Get My Free Quote<svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
                 </div>
             </div>
         </section>
 
-
-        <!-- ============================================== -->
-        <!-- ABOUT US - Company story + counters            -->
-        <!-- ============================================== -->
+        <!-- ABOUT -->
         <section id="about" class="py-14 sm:py-20 lg:py-28 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-                    <!-- Text Content -->
                     <div id="about-text" class="order-2 lg:order-1 opacity-0">
                         <span class="inline-block text-primary-blue font-semibold text-sm tracking-widest uppercase mb-4">About Us</span>
-                        <h2 class="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-almost-black mb-4 sm:mb-6 leading-tight">
-                            Behind Home Solutions
-                        </h2>
-                        <p class="text-gray-medium text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
-                            As a family-owned business, we take pride in our craft and work hard to provide unmatched cleaning services you can rely on. Founded in North Carolina, we've built our reputation on trust, attention to detail, and a genuine commitment to making every home shine. These values have driven our steady growth and the loyalty of the families we serve.
-                        </p>
-
-                        <!-- Counters -->
+                        <h2 class="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-almost-black mb-4 sm:mb-6 leading-tight">Behind Home Solutions</h2>
+                        <p class="text-gray-medium text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">As a family-owned business, we take pride in our craft and work hard to provide unmatched cleaning services you can rely on. Founded in North Carolina, we've built our reputation on trust, attention to detail, and a genuine commitment to making every home shine. These values have driven our steady growth and the loyalty of the families we serve.</p>
                         <div class="grid grid-cols-3 gap-3 sm:gap-6">
-                            <!-- POR CONFIRMAR CON EL CLIENTE: Homes Cleaned count -->
                             <div class="text-center lg:text-left">
                                 <div class="flex items-baseline justify-center lg:justify-start">
                                     <span class="counter font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-primary-blue" data-target="500">0</span>
@@ -499,7 +326,6 @@
                                 </div>
                                 <p class="text-gray-medium text-xs sm:text-sm mt-1">Homes Cleaned</p>
                             </div>
-                            <!-- POR CONFIRMAR CON EL CLIENTE: Years of Experience -->
                             <div class="text-center lg:text-left">
                                 <div class="flex items-baseline justify-center lg:justify-start">
                                     <span class="counter font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-primary-blue" data-target="5">0</span>
@@ -516,117 +342,70 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Image -->
                     <div id="about-image" class="order-1 lg:order-2 opacity-0">
                         <div class="relative">
-                            <img src="assets/img/about-team.jpg" alt="Home Solutions NC team - family-owned cleaning professionals" class="w-full h-auto rounded-2xl shadow-xl object-cover" width="800" height="600" loading="lazy">
-                            <!-- Decorative accent -->
+                            <img src="assets/img/about-team.jpg" alt="Home Solutions NC team" class="w-full h-auto rounded-2xl shadow-xl object-cover" width="800" height="600" loading="lazy">
                             <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-copper/20 rounded-2xl -z-10 hidden sm:block"></div>
                             <div class="absolute -top-4 -left-4 w-20 h-20 bg-primary-blue/20 rounded-2xl -z-10 hidden sm:block"></div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-
-        <!-- ============================================== -->
-        <!-- GALLERY - Before & After sliders              -->
-        <!-- ============================================== -->
+        <!-- GALLERY -->
         <section id="gallery" class="py-14 sm:py-20 lg:py-28 bg-off-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                <!-- Section Header -->
                 <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-                    <h2 class="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-almost-black mb-4 sm:mb-6">
-                        See the Difference
-                    </h2>
-                    <p class="text-gray-medium text-base sm:text-lg leading-relaxed">
-                        Real results from real homes. Drag the slider to compare.
-                    </p>
+                    <h2 class="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-almost-black mb-4 sm:mb-6">See the Difference</h2>
+                    <p class="text-gray-medium text-base sm:text-lg leading-relaxed">Real results from real homes. Drag the slider to compare.</p>
                 </div>
-
-                <!-- Before/After Sliders Grid -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-
-                    <!-- Slider 1: Kitchen -->
                     <div class="gallery-item opacity-0">
                         <h3 class="font-heading text-xl font-bold text-almost-black mb-4 text-center">Kitchen Transformation</h3>
                         <div class="before-after-slider relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-lg cursor-ew-resize select-none" data-slider="1">
-                            <!-- After Image (bottom layer) -->
                             <img src="assets/img/gallery-after-1.jpg" alt="Clean kitchen after professional cleaning" class="absolute inset-0 w-full h-full object-cover" width="800" height="600" loading="lazy">
-                            <!-- Before Image (top layer, clipped) -->
                             <div class="before-image-wrapper absolute inset-0 overflow-hidden" style="width: 50%;">
                                 <img src="assets/img/gallery-before-1.jpg" alt="Kitchen before professional cleaning" class="absolute inset-0 w-full h-full object-cover" style="min-width: 200%; width: auto; max-width: none;" width="800" height="600" loading="lazy">
                             </div>
-                            <!-- Labels -->
                             <span class="absolute top-4 left-4 bg-dark-1/80 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Before</span>
                             <span class="absolute top-4 right-4 bg-copper/90 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">After</span>
-                            <!-- Drag Handle -->
                             <div class="slider-handle absolute top-0 bottom-0 w-1 bg-white shadow-lg cursor-ew-resize" style="left: 50%;">
                                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-xl flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-dark-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/>
-                                    </svg>
+                                    <svg class="w-5 h-5 text-dark-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Slider 2: Bathroom -->
                     <div class="gallery-item opacity-0">
                         <h3 class="font-heading text-xl font-bold text-almost-black mb-4 text-center">Bathroom Transformation</h3>
                         <div class="before-after-slider relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-lg cursor-ew-resize select-none" data-slider="2">
-                            <!-- After Image (bottom layer) -->
                             <img src="assets/img/gallery-after-2.jpg" alt="Clean bathroom after professional cleaning" class="absolute inset-0 w-full h-full object-cover" width="800" height="600" loading="lazy">
-                            <!-- Before Image (top layer, clipped) -->
                             <div class="before-image-wrapper absolute inset-0 overflow-hidden" style="width: 50%;">
                                 <img src="assets/img/gallery-before-2.jpg" alt="Bathroom before professional cleaning" class="absolute inset-0 w-full h-full object-cover" style="min-width: 200%; width: auto; max-width: none;" width="800" height="600" loading="lazy">
                             </div>
-                            <!-- Labels -->
                             <span class="absolute top-4 left-4 bg-dark-1/80 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Before</span>
                             <span class="absolute top-4 right-4 bg-copper/90 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">After</span>
-                            <!-- Drag Handle -->
                             <div class="slider-handle absolute top-0 bottom-0 w-1 bg-white shadow-lg cursor-ew-resize" style="left: 50%;">
                                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-xl flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-dark-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/>
-                                    </svg>
+                                    <svg class="w-5 h-5 text-dark-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-
-        <!-- ============================================== -->
-        <!-- TESTIMONIALS - Client reviews                  -->
-        <!-- ============================================== -->
+        <!-- TESTIMONIALS -->
         <section id="testimonials" class="py-14 sm:py-20 lg:py-28 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                <!-- Section Header -->
                 <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-                    <h2 class="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-almost-black mb-4 sm:mb-6">
-                        Why North Carolina Chooses Home Solutions
-                    </h2>
-                    <p class="text-gray-medium text-base sm:text-lg leading-relaxed">
-                        Your neighbors share their real experiences and 5-star results.
-                    </p>
+                    <h2 class="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-almost-black mb-4 sm:mb-6">Why North Carolina Chooses Home Solutions</h2>
+                    <p class="text-gray-medium text-base sm:text-lg leading-relaxed">Your neighbors share their real experiences and 5-star results.</p>
                 </div>
-
-                <!-- Testimonials Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                    <!-- Testimonial 1 -->
-                    <!-- POR CONFIRMAR CON EL CLIENTE: Nombre del cliente -->
                     <div class="testimonial-card bg-off-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 opacity-0">
-                        <!-- Stars -->
                         <div class="flex items-center mb-5">
                             <svg class="w-5 h-5 text-copper" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-5 h-5 text-copper" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -634,24 +413,13 @@
                             <svg class="w-5 h-5 text-copper" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-5 h-5 text-copper" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                         </div>
-                        <!-- Quote -->
-                        <p class="text-almost-black text-base leading-relaxed mb-6 italic">
-                            "Such a wonderful experience! I requested a quote and received an answer extremely quickly. Scheduling was super easy and the team did an amazing job. My home has never looked this clean!"
-                        </p>
-                        <!-- Author -->
+                        <p class="text-almost-black text-base leading-relaxed mb-6 italic">"Such a wonderful experience! I requested a quote and received an answer extremely quickly. Scheduling was super easy and the team did an amazing job. My home has never looked this clean!"</p>
                         <div class="flex items-center">
-                            <img src="assets/img/testimonial-1.jpg" alt="Sarah M. - Home Solutions NC client" class="w-12 h-12 rounded-full object-cover mr-4" width="200" height="200" loading="lazy">
-                            <div>
-                                <p class="font-heading font-bold text-almost-black">Sarah M.</p>
-                                <p class="text-gray-medium text-sm">Satisfied Customer</p>
-                            </div>
+                            <img src="assets/img/testimonial-1.jpg" alt="Sarah M." class="w-12 h-12 rounded-full object-cover mr-4" width="200" height="200" loading="lazy">
+                            <div><p class="font-heading font-bold text-almost-black">Sarah M.</p><p class="text-gray-medium text-sm">Satisfied Customer</p></div>
                         </div>
                     </div>
-
-                    <!-- Testimonial 2 -->
-                    <!-- POR CONFIRMAR CON EL CLIENTE: Nombre del cliente -->
                     <div class="testimonial-card bg-off-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 opacity-0">
-                        <!-- Stars -->
                         <div class="flex items-center mb-5">
                             <svg class="w-5 h-5 text-copper" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-5 h-5 text-copper" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -659,24 +427,13 @@
                             <svg class="w-5 h-5 text-copper" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-5 h-5 text-copper" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                         </div>
-                        <!-- Quote -->
-                        <p class="text-almost-black text-base leading-relaxed mb-6 italic">
-                            "Home Solutions are the best! I get a deep cleaning every few months and I'm amazed every time. They pay attention to every detail and the house always smells wonderful."
-                        </p>
-                        <!-- Author -->
+                        <p class="text-almost-black text-base leading-relaxed mb-6 italic">"Home Solutions are the best! I get a deep cleaning every few months and I'm amazed every time. They pay attention to every detail and the house always smells wonderful."</p>
                         <div class="flex items-center">
-                            <img src="assets/img/testimonial-2.jpg" alt="James T. - Home Solutions NC client" class="w-12 h-12 rounded-full object-cover mr-4" width="200" height="200" loading="lazy">
-                            <div>
-                                <p class="font-heading font-bold text-almost-black">James T.</p>
-                                <p class="text-gray-medium text-sm">Satisfied Customer</p>
-                            </div>
+                            <img src="assets/img/testimonial-2.jpg" alt="James T." class="w-12 h-12 rounded-full object-cover mr-4" width="200" height="200" loading="lazy">
+                            <div><p class="font-heading font-bold text-almost-black">James T.</p><p class="text-gray-medium text-sm">Satisfied Customer</p></div>
                         </div>
                     </div>
-
-                    <!-- Testimonial 3 -->
-                    <!-- POR CONFIRMAR CON EL CLIENTE: Nombre del cliente -->
                     <div class="testimonial-card bg-off-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 opacity-0">
-                        <!-- Stars -->
                         <div class="flex items-center mb-5">
                             <svg class="w-5 h-5 text-copper" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-5 h-5 text-copper" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -684,94 +441,49 @@
                             <svg class="w-5 h-5 text-copper" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg class="w-5 h-5 text-copper" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                         </div>
-                        <!-- Quote -->
-                        <p class="text-almost-black text-base leading-relaxed mb-6 italic">
-                            "Highly recommend Home Solutions! We hired them for an initial deep clean and then monthly cleanings. The team is always professional, punctual, and thorough. Best decision we've made!"
-                        </p>
-                        <!-- Author -->
+                        <p class="text-almost-black text-base leading-relaxed mb-6 italic">"Highly recommend Home Solutions! We hired them for an initial deep clean and then monthly cleanings. The team is always professional, punctual, and thorough. Best decision we've made!"</p>
                         <div class="flex items-center">
-                            <img src="assets/img/testimonial-3.jpg" alt="Patricia R. - Home Solutions NC client" class="w-12 h-12 rounded-full object-cover mr-4" width="200" height="200" loading="lazy">
-                            <div>
-                                <p class="font-heading font-bold text-almost-black">Patricia R.</p>
-                                <p class="text-gray-medium text-sm">Satisfied Customer</p>
-                            </div>
+                            <img src="assets/img/testimonial-3.jpg" alt="Patricia R." class="w-12 h-12 rounded-full object-cover mr-4" width="200" height="200" loading="lazy">
+                            <div><p class="font-heading font-bold text-almost-black">Patricia R.</p><p class="text-gray-medium text-sm">Satisfied Customer</p></div>
                         </div>
                     </div>
-
                 </div>
-
-                <!-- See All Reviews Button -->
                 <div class="text-center mt-12">
-                    <!-- POR CONFIRMAR CON EL CLIENTE: Link a Google Maps reviews -->
-                    <a href="#" class="inline-flex items-center text-primary-blue hover:text-copper font-semibold text-lg transition-colors duration-300" target="_blank" rel="noopener noreferrer">
-                        See All Reviews
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                        </svg>
-                    </a>
+                    <a href="#" class="inline-flex items-center text-primary-blue hover:text-copper font-semibold text-lg transition-colors duration-300" target="_blank" rel="noopener noreferrer">See All Reviews<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
                 </div>
             </div>
         </section>
 
-
-        <!-- ============================================== -->
-        <!-- QUOTE / CONTACT FORM - WhatsApp pre-filled    -->
-        <!-- ============================================== -->
+        <!-- CONTACT FORM -->
         <section id="contact" class="relative py-14 sm:py-20 lg:py-28">
-
-            <!-- Background Image with Overlay -->
             <div class="absolute inset-0">
                 <img src="assets/img/quote-bg.jpg" alt="" class="w-full h-full object-cover" width="1920" height="600" loading="lazy" aria-hidden="true">
                 <div class="absolute inset-0 bg-dark-1 bg-opacity-70"></div>
             </div>
-
-            <!-- Content -->
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                <!-- Section Header -->
                 <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-                    <h2 class="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
-                        Get Your Free Quote
-                    </h2>
-                    <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
-                        Fill out the form and we'll receive your request instantly via WhatsApp. Fast, easy, and personal.
-                    </p>
+                    <h2 class="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">Get Your Free Quote</h2>
+                    <p class="text-gray-300 text-base sm:text-lg leading-relaxed">Fill out the form and we'll receive your request instantly via WhatsApp. Fast, easy, and personal.</p>
                 </div>
-
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-
-                    <!-- Form (2/3 width on desktop) -->
                     <div id="quote-form-wrapper" class="lg:col-span-2 opacity-0">
                         <form id="quote-form" class="bg-white rounded-2xl p-5 sm:p-8 md:p-10 shadow-2xl">
-
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-
-                                <!-- Full Name -->
                                 <div>
                                     <label for="full-name" class="block text-sm font-semibold text-almost-black mb-2">Full Name <span class="text-copper">*</span></label>
-                                    <input type="text" id="full-name" name="full_name" required placeholder="Your full name"
-                                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black placeholder-gray-medium/50">
+                                    <input type="text" id="full-name" name="full_name" required placeholder="Your full name" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black placeholder-gray-medium/50">
                                 </div>
-
-                                <!-- Phone -->
                                 <div>
                                     <label for="phone" class="block text-sm font-semibold text-almost-black mb-2">Phone <span class="text-copper">*</span></label>
-                                    <input type="tel" id="phone" name="phone" required placeholder="(000) 000-0000"
-                                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black placeholder-gray-medium/50">
+                                    <input type="tel" id="phone" name="phone" required placeholder="(000) 000-0000" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black placeholder-gray-medium/50">
                                 </div>
-
-                                <!-- Email -->
                                 <div>
                                     <label for="email" class="block text-sm font-semibold text-almost-black mb-2">Email <span class="text-copper">*</span></label>
-                                    <input type="email" id="email" name="email" required placeholder="your@email.com"
-                                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black placeholder-gray-medium/50">
+                                    <input type="email" id="email" name="email" required placeholder="your@email.com" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black placeholder-gray-medium/50">
                                 </div>
-
-                                <!-- Type of Service -->
                                 <div>
                                     <label for="service-type" class="block text-sm font-semibold text-almost-black mb-2">Type of Service <span class="text-copper">*</span></label>
-                                    <select id="service-type" name="service_type" required
-                                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black bg-white">
+                                    <select id="service-type" name="service_type" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black bg-white">
                                         <option value="" disabled selected>Select a service</option>
                                         <option value="Initial Deep Cleaning">Initial Deep Cleaning</option>
                                         <option value="Recurring Cleaning">Recurring Cleaning</option>
@@ -779,12 +491,9 @@
                                         <option value="Post-Construction Cleaning">Post-Construction Cleaning</option>
                                     </select>
                                 </div>
-
-                                <!-- Square Footage -->
                                 <div>
                                     <label for="sqft" class="block text-sm font-semibold text-almost-black mb-2">Square Footage Estimated</label>
-                                    <select id="sqft" name="square_footage"
-                                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black bg-white">
+                                    <select id="sqft" name="square_footage" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black bg-white">
                                         <option value="" disabled selected>Select estimated size</option>
                                         <option value="Under 1,000 sqft">Under 1,000 sqft</option>
                                         <option value="1,000 - 2,000 sqft">1,000 - 2,000 sqft</option>
@@ -792,32 +501,18 @@
                                         <option value="3,000+ sqft">3,000+ sqft</option>
                                     </select>
                                 </div>
-
-                                <!-- Entire House -->
                                 <div>
                                     <label class="block text-sm font-semibold text-almost-black mb-2">Entire house cleaned?</label>
                                     <div class="flex items-center space-x-6 mt-3">
-                                        <label class="flex items-center cursor-pointer">
-                                            <input type="radio" name="entire_house" value="Yes" class="w-4 h-4 text-primary-blue border-gray-300 focus:ring-primary-blue">
-                                            <span class="ml-2 text-almost-black">Yes</span>
-                                        </label>
-                                        <label class="flex items-center cursor-pointer">
-                                            <input type="radio" name="entire_house" value="No" class="w-4 h-4 text-primary-blue border-gray-300 focus:ring-primary-blue">
-                                            <span class="ml-2 text-almost-black">No</span>
-                                        </label>
+                                        <label class="flex items-center cursor-pointer"><input type="radio" name="entire_house" value="Yes" class="w-4 h-4 text-primary-blue border-gray-300 focus:ring-primary-blue"><span class="ml-2 text-almost-black">Yes</span></label>
+                                        <label class="flex items-center cursor-pointer"><input type="radio" name="entire_house" value="No" class="w-4 h-4 text-primary-blue border-gray-300 focus:ring-primary-blue"><span class="ml-2 text-almost-black">No</span></label>
                                     </div>
                                 </div>
-
                             </div>
-
-                            <!-- Additional Details -->
                             <div class="mt-6">
                                 <label for="details" class="block text-sm font-semibold text-almost-black mb-2">Additional Details</label>
-                                <textarea id="details" name="additional_details" rows="4" placeholder="Tell us about any specific needs or questions..."
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black placeholder-gray-medium/50 resize-vertical"></textarea>
+                                <textarea id="details" name="additional_details" rows="4" placeholder="Tell us about any specific needs or questions..." class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black placeholder-gray-medium/50 resize-vertical"></textarea>
                             </div>
-
-                            <!-- Submit Button -->
                             <div class="mt-8">
                                 <button type="submit" class="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white px-10 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-3">
                                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -826,108 +521,46 @@
                             </div>
                         </form>
                     </div>
-
-                    <!-- Contact Info Sidebar (1/3 width on desktop) -->
                     <div id="contact-info" class="opacity-0">
                         <div class="bg-dark-2 rounded-2xl p-6 sm:p-8 md:p-10 h-full">
                             <h3 class="font-heading text-2xl font-bold text-white mb-8">Get in Touch</h3>
-
-                            <!-- Phone -->
                             <div class="mb-8">
-                                <div class="flex items-center mb-3">
-                                    <svg class="w-5 h-5 text-copper mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                                    </svg>
-                                    <span class="text-white/60 text-sm font-semibold uppercase tracking-wider">Phone</span>
-                                </div>
+                                <div class="flex items-center mb-3"><svg class="w-5 h-5 text-copper mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg><span class="text-white/60 text-sm font-semibold uppercase tracking-wider">Phone</span></div>
                                 <a href="tel:+10000000000" class="text-white text-lg hover:text-copper transition-colors duration-300 phone-number">(000) 000-0000</a>
                             </div>
-
-                            <!-- Email -->
                             <div class="mb-8">
-                                <div class="flex items-center mb-3">
-                                    <svg class="w-5 h-5 text-copper mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                    </svg>
-                                    <span class="text-white/60 text-sm font-semibold uppercase tracking-wider">Email</span>
-                                </div>
+                                <div class="flex items-center mb-3"><svg class="w-5 h-5 text-copper mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><span class="text-white/60 text-sm font-semibold uppercase tracking-wider">Email</span></div>
                                 <a href="mailto:info@homesolutionsncllc.com" class="text-white text-lg hover:text-copper transition-colors duration-300 contact-email break-all">info@homesolutionsncllc.com</a>
                             </div>
-
-                            <!-- Operating Hours -->
                             <div class="mb-8">
-                                <div class="flex items-center mb-3">
-                                    <svg class="w-5 h-5 text-copper mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                    </svg>
-                                    <span class="text-white/60 text-sm font-semibold uppercase tracking-wider">Operating Hours</span>
-                                </div>
+                                <div class="flex items-center mb-3"><svg class="w-5 h-5 text-copper mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="text-white/60 text-sm font-semibold uppercase tracking-wider">Operating Hours</span></div>
                                 <p class="text-white text-lg operating-hours">Mon - Sat: 8:00 AM - 6:00 PM</p>
                                 <p class="text-white/60 text-sm mt-1">Sunday: Closed</p>
                             </div>
-
-                            <!-- Service Areas -->
                             <div>
-                                <div class="flex items-center mb-3">
-                                    <svg class="w-5 h-5 text-copper mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                    </svg>
-                                    <span class="text-white/60 text-sm font-semibold uppercase tracking-wider">Serving</span>
-                                </div>
+                                <div class="flex items-center mb-3"><svg class="w-5 h-5 text-copper mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span class="text-white/60 text-sm font-semibold uppercase tracking-wider">Serving</span></div>
                                 <p class="text-white text-lg service-areas">Raleigh, Cary, Apex, Durham, Chapel Hill and surrounding areas</p>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
-
     </main>
 
-
-    <!-- ============================================== -->
-    <!-- FOOTER - Site footer                           -->
-    <!-- ============================================== -->
+    <!-- FOOTER -->
     <footer class="bg-dark-1 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <!-- Main Footer Content -->
             <div class="py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-
-                <!-- Column 1: Logo + About -->
                 <div class="sm:col-span-2 lg:col-span-1">
-                    <a href="#hero" class="inline-block mb-6">
-                        <img src="assets/img/logo.svg" alt="Home Solutions NC LLC" class="h-12 w-auto" width="150" height="48">
-                    </a>
-                    <p class="text-white/60 text-sm leading-relaxed mb-6">
-                        Professional residential cleaning services in North Carolina. Your home, our priority.
-                    </p>
-                    <!-- Social Media Icons -->
+                    <a href="#hero" class="inline-block mb-6"><img src="assets/img/logo.svg" alt="Home Solutions NC LLC" class="h-12 w-auto" width="150" height="48"></a>
+                    <p class="text-white/60 text-sm leading-relaxed mb-6">Professional residential cleaning services in North Carolina. Your home, our priority.</p>
                     <div class="flex items-center space-x-4">
-                        <!-- POR CONFIRMAR CON EL CLIENTE: Instagram URL -->
-                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-copper rounded-lg flex items-center justify-center transition-all duration-300" aria-label="Follow us on Instagram" target="_blank" rel="noopener noreferrer">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                            </svg>
-                        </a>
-                        <!-- POR CONFIRMAR CON EL CLIENTE: Facebook URL -->
-                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-copper rounded-lg flex items-center justify-center transition-all duration-300" aria-label="Follow us on Facebook" target="_blank" rel="noopener noreferrer">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
-                        <!-- POR CONFIRMAR CON EL CLIENTE: TikTok URL -->
-                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-copper rounded-lg flex items-center justify-center transition-all duration-300" aria-label="Follow us on TikTok" target="_blank" rel="noopener noreferrer">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-                            </svg>
-                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-copper rounded-lg flex items-center justify-center transition-all duration-300" aria-label="Follow us on Instagram" target="_blank" rel="noopener noreferrer"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-copper rounded-lg flex items-center justify-center transition-all duration-300" aria-label="Follow us on Facebook" target="_blank" rel="noopener noreferrer"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-copper rounded-lg flex items-center justify-center transition-all duration-300" aria-label="Follow us on TikTok" target="_blank" rel="noopener noreferrer"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                     </div>
                 </div>
-
-                <!-- Column 2: Quick Links -->
                 <div>
                     <h4 class="font-heading font-bold text-lg mb-6">Quick Links</h4>
                     <ul class="space-y-3">
@@ -939,8 +572,6 @@
                         <li><a href="#contact" class="text-white/60 hover:text-copper transition-colors duration-300 text-sm">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Column 3: Services -->
                 <div>
                     <h4 class="font-heading font-bold text-lg mb-6">Our Services</h4>
                     <ul class="space-y-3">
@@ -950,91 +581,38 @@
                         <li><a href="#services" class="text-white/60 hover:text-copper transition-colors duration-300 text-sm">Post-Construction</a></li>
                     </ul>
                 </div>
-
-                <!-- Column 4: Contact Info -->
                 <div>
                     <h4 class="font-heading font-bold text-lg mb-6">Contact Us</h4>
                     <ul class="space-y-4">
-                        <!-- POR CONFIRMAR CON EL CLIENTE: Telefono -->
-                        <li>
-                            <a href="tel:+10000000000" class="flex items-start text-white/60 hover:text-copper transition-colors duration-300 text-sm">
-                                <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                                </svg>
-                                <span class="phone-number">(000) 000-0000</span>
-                            </a>
-                        </li>
-                        <!-- POR CONFIRMAR CON EL CLIENTE: Email -->
-                        <li>
-                            <a href="mailto:info@homesolutionsncllc.com" class="flex items-start text-white/60 hover:text-copper transition-colors duration-300 text-sm">
-                                <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                </svg>
-                                <span class="contact-email">info@homesolutionsncllc.com</span>
-                            </a>
-                        </li>
-                        <!-- POR CONFIRMAR CON EL CLIENTE: Horario -->
-                        <li class="flex items-start text-white/60 text-sm">
-                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                            <span class="operating-hours">Mon - Sat: 8:00 AM - 6:00 PM</span>
-                        </li>
-                        <!-- POR CONFIRMAR CON EL CLIENTE: Areas de servicio -->
-                        <li class="flex items-start text-white/60 text-sm">
-                            <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                            <span class="service-areas">Raleigh, Cary, Apex, Durham, Chapel Hill and surrounding areas</span>
-                        </li>
+                        <li><a href="tel:+10000000000" class="flex items-start text-white/60 hover:text-copper transition-colors duration-300 text-sm"><svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg><span class="phone-number">(000) 000-0000</span></a></li>
+                        <li><a href="mailto:info@homesolutionsncllc.com" class="flex items-start text-white/60 hover:text-copper transition-colors duration-300 text-sm"><svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><span class="contact-email">info@homesolutionsncllc.com</span></a></li>
+                        <li class="flex items-start text-white/60 text-sm"><svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="operating-hours">Mon - Sat: 8:00 AM - 6:00 PM</span></li>
+                        <li class="flex items-start text-white/60 text-sm"><svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span class="service-areas">Raleigh, Cary, Apex, Durham, Chapel Hill and surrounding areas</span></li>
                     </ul>
                 </div>
-
             </div>
-
-            <!-- Footer Bottom -->
             <div class="border-t border-white/10 py-8">
                 <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p class="text-white/40 text-sm text-center sm:text-left">
-                        &copy; 2026 Home Solutions NC LLC. All rights reserved.
-                    </p>
+                    <p class="text-white/40 text-sm text-center sm:text-left">&copy; 2026 Home Solutions NC LLC. All rights reserved.</p>
                     <div class="flex items-center space-x-6">
                         <a href="#" class="text-white/40 hover:text-copper transition-colors duration-300 text-sm">Privacy Policy</a>
                         <a href="#" class="text-white/40 hover:text-copper transition-colors duration-300 text-sm">Terms &amp; Conditions</a>
                     </div>
-                    <p class="text-white/30 text-xs">
-                        Website by <a href="https://herasi.dev" class="text-copper hover:text-white transition-colors duration-300" target="_blank" rel="noopener noreferrer">herasi.dev</a>
-                    </p>
+                    <p class="text-white/30 text-xs">Website by <a href="https://herasi.dev" class="text-copper hover:text-white transition-colors duration-300" target="_blank" rel="noopener noreferrer">herasi.dev</a></p>
                 </div>
             </div>
-
         </div>
     </footer>
 
-
-    <!-- ============================================== -->
-    <!-- WHATSAPP FLOATING BUTTON                       -->
-    <!-- POR CONFIRMAR CON EL CLIENTE: WhatsApp number  -->
-    <!-- ============================================== -->
+    <!-- WHATSAPP FLOATING BUTTON -->
     <a id="whatsapp-btn" href="https://wa.me/10000000000?text=Hi!%20I'm%20interested%20in%20your%20cleaning%20services." class="fixed bottom-6 right-6 z-50 w-14 h-14 sm:w-16 sm:h-16 bg-[#25D366] hover:bg-[#20bd5a] rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 group" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
-        <!-- WhatsApp SVG Icon -->
-        <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        <!-- Tooltip -->
-        <span class="absolute right-full mr-3 bg-dark-1 text-white text-sm px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none hidden sm:block">
-            Chat with us
-        </span>
+        <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="absolute right-full mr-3 bg-dark-1 text-white text-sm px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none hidden sm:block">Chat with us</span>
     </a>
 
-
-    <!-- ============================================== -->
-    <!-- SCRIPTS - GSAP + Custom JS                     -->
-    <!-- ============================================== -->
+    <!-- SCRIPTS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="js/main.js"></script>
-
 </body>
 </html>
