@@ -762,20 +762,11 @@ function initBeforeAfterSliders() {
 
 function initWhatsAppButton() {
     const whatsappBtn = document.getElementById('whatsapp-btn');
+    const footer = document.querySelector('footer');
     if (!whatsappBtn) return;
 
-    // Hide WhatsApp button when user is near the footer to avoid overlapping
-    ScrollTrigger.create({
-        trigger: 'footer',
-        start: 'top bottom',
-        end: 'bottom bottom',
-        onEnter: () => {
-            gsap.to(whatsappBtn, { opacity: 0, scale: 0.8, duration: 0.3, pointerEvents: 'none' });
-        },
-        onLeaveBack: () => {
-            gsap.to(whatsappBtn, { opacity: 1, scale: 1, duration: 0.3, pointerEvents: 'auto' });
-        }
-    });
+    let btnVisible = false;
+    let btnReady = false; // true after entrance animation completes
 
     // Entrance animation - button appears after 2 seconds
     gsap.set(whatsappBtn, { scale: 0, opacity: 0 });
@@ -784,8 +775,46 @@ function initWhatsAppButton() {
         opacity: 1,
         duration: 0.5,
         delay: 2,
-        ease: 'back.out(1.7)'
+        ease: 'back.out(1.7)',
+        onComplete: () => {
+            btnReady = true;
+            btnVisible = true;
+            checkFooterOverlap(); // check immediately after entrance
+        }
     });
+
+    // Hide WhatsApp button when it overlaps the footer
+    function checkFooterOverlap() {
+        if (!footer || !btnReady) return;
+
+        const footerTop = footer.getBoundingClientRect().top;
+        const threshold = window.innerHeight - 100; // 100px margin from bottom
+
+        if (footerTop <= threshold && btnVisible) {
+            btnVisible = false;
+            gsap.to(whatsappBtn, {
+                opacity: 0,
+                scale: 0.8,
+                duration: 0.3,
+                onComplete: () => { whatsappBtn.style.pointerEvents = 'none'; }
+            });
+        } else if (footerTop > threshold && !btnVisible) {
+            btnVisible = true;
+            whatsappBtn.style.pointerEvents = 'auto';
+            gsap.to(whatsappBtn, { opacity: 1, scale: 1, duration: 0.3 });
+        }
+    }
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                checkFooterOverlap();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
 }
 
 
