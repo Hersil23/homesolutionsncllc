@@ -132,6 +132,7 @@ main {
     border: 0;
     line-height: 0;
     font-size: 0;
+    /* Extend hero slightly to cover any subpixel gap at top/bottom */
     margin-top: -3px;
     padding-top: 3px;
     margin-bottom: -2px;
@@ -153,8 +154,10 @@ main {
     padding: 0;
     border: 0;
     outline: 0;
+    /* Scale slightly to cover any 1px gap on edges */
     transform: scale(1.01);
     transform-origin: center center;
+    /* Prevent any box-shadow or outline from rendering */
     box-shadow: none;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
