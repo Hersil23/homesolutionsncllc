@@ -459,9 +459,16 @@ img {
 
 
 /* ============================================== */
-/* 13. SCROLLBAR - Use browser defaults           */
+/* 13. SCROLLBAR - Hidden but functional          */
 /* ============================================== */
-/* Scrollbar customization removed — using native browser scrollbar */
+html {
+    scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none;     /* IE / Edge */
+}
+
+html::-webkit-scrollbar {
+    display: none;                /* Chrome, Safari, Opera */
+}
 
 
 /* ============================================== */
