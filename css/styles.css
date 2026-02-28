@@ -11,10 +11,6 @@
 html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
-    /* CRITICAL: Dark background on html element covers the gap between
-       mobile browser UI and viewport. This is the topmost background
-       layer - if any subpixel gap exists, this color shows instead of white */
-    background-color: #303643;
 }
 
 /* Remove default margin/padding and set box-sizing */
@@ -32,9 +28,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
-    /* Match hero background so no white line shows at top.
-       !important needed to override Tailwind's bg-white class on <body> */
-    background-color: #303643 !important;
+    /* Match hero background so no white line shows at top */
+    background-color: #303643;
 }
 
 /* Reset background to white after hero (main content area) */
