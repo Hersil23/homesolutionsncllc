@@ -117,17 +117,14 @@ body {
 /* 3. HERO SECTION                                */
 /* ============================================== */
 
-/* Video background positioning */
+/* Hero background color prevents gray gaps if video doesn't fully cover */
+#hero {
+    background-color: #303643;
+}
+
+/* Ensure object-fit: cover on video for all mobile browsers */
 #hero video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    z-index: -1;
+    object-fit: cover;
 }
 
 /* Hero scroll indicator bounce animation */
