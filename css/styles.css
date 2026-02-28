@@ -120,7 +120,7 @@ body {
 /* Hero - eliminate gaps and subpixel lines on mobile */
 #hero {
     background-color: #303643;
-    margin-bottom: -1px;
+    margin-bottom: -2px;
     line-height: 0;
     font-size: 0;
 }
@@ -135,7 +135,14 @@ body {
     border: 0;
     outline: none;
     box-shadow: none;
-    transform: scale(1.01);
+    transform: scale(1.02);
+}
+
+/* Close gap between hero and next section */
+#trust-bar {
+    margin-top: -2px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Hero scroll indicator bounce animation */
