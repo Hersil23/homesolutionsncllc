@@ -28,6 +28,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
+    background-color: #303643;
 }
 
 /* Remove default focus outline and add custom */
@@ -117,33 +118,16 @@ body {
 /* 3. HERO SECTION                                */
 /* ============================================== */
 
-/* Hero - eliminate gaps and subpixel lines on mobile */
+/* Hero - dark background fallback */
 #hero {
     background-color: #303643;
-    margin-bottom: -2px;
-    line-height: 0;
-    font-size: 0;
 }
 
 #hero video {
     display: block;
     object-fit: cover;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: none;
-    box-shadow: none;
-    transform: scale(1.02);
 }
 
-/* Close gap between hero and next section */
-#trust-bar {
-    margin-top: -2px;
-    position: relative;
-    z-index: 1;
-}
 
 /* Hero scroll indicator bounce animation */
 @keyframes gentleBounce {
