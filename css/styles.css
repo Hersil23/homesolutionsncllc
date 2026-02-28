@@ -186,6 +186,29 @@ body {
     transform: scaleX(1);
 }
 
+/* Service card image container - responsive aspect ratio */
+.service-img-wrapper {
+    aspect-ratio: 3 / 4;
+}
+
+.service-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+/* Tablet+ (2-col and 4-col grid): switch to landscape ratio */
+@media (min-width: 640px) {
+    .service-img-wrapper {
+        aspect-ratio: 4 / 3;
+    }
+
+    .service-img-wrapper img {
+        object-position: center center;
+    }
+}
+
 
 /* ============================================== */
 /* 6. HOW IT WORKS                                */
