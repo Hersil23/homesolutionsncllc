@@ -708,8 +708,175 @@
         </section>
 
 
-        <!-- Contact section removed — contact info is in the footer -->
-        <!-- If client requests a form later, add it here using Formspree (formspree.io) or EmailJS (emailjs.com) -->
+        <!-- ============================================== -->
+        <!-- QUOTE / CONTACT FORM - WhatsApp pre-filled    -->
+        <!-- ============================================== -->
+        <section id="contact" class="relative py-14 sm:py-20 lg:py-28">
+
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0">
+                <img src="assets/img/quote-bg.jpg" alt="" class="w-full h-full object-cover" width="1920" height="600" loading="lazy" aria-hidden="true">
+                <div class="absolute inset-0 bg-dark-1 bg-opacity-70"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                    <h2 class="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
+                        Get Your Free Quote
+                    </h2>
+                    <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
+                        Fill out the form and we'll receive your request instantly via WhatsApp. Fast, easy, and personal.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+
+                    <!-- Form (2/3 width on desktop) -->
+                    <div id="quote-form-wrapper" class="lg:col-span-2 opacity-0">
+                        <form id="quote-form" class="bg-white rounded-2xl p-5 sm:p-8 md:p-10 shadow-2xl">
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+                                <!-- Full Name -->
+                                <div>
+                                    <label for="full-name" class="block text-sm font-semibold text-almost-black mb-2">Full Name <span class="text-copper">*</span></label>
+                                    <input type="text" id="full-name" name="full_name" required placeholder="Your full name"
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black placeholder-gray-medium/50">
+                                </div>
+
+                                <!-- Phone -->
+                                <div>
+                                    <label for="phone" class="block text-sm font-semibold text-almost-black mb-2">Phone <span class="text-copper">*</span></label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="(000) 000-0000"
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black placeholder-gray-medium/50">
+                                </div>
+
+                                <!-- Email -->
+                                <div>
+                                    <label for="email" class="block text-sm font-semibold text-almost-black mb-2">Email <span class="text-copper">*</span></label>
+                                    <input type="email" id="email" name="email" required placeholder="your@email.com"
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black placeholder-gray-medium/50">
+                                </div>
+
+                                <!-- Type of Service -->
+                                <div>
+                                    <label for="service-type" class="block text-sm font-semibold text-almost-black mb-2">Type of Service <span class="text-copper">*</span></label>
+                                    <select id="service-type" name="service_type" required
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black bg-white">
+                                        <option value="" disabled selected>Select a service</option>
+                                        <option value="Initial Deep Cleaning">Initial Deep Cleaning</option>
+                                        <option value="Recurring Cleaning">Recurring Cleaning</option>
+                                        <option value="Move-In / Move-Out Cleaning">Move-In / Move-Out Cleaning</option>
+                                        <option value="Post-Construction Cleaning">Post-Construction Cleaning</option>
+                                    </select>
+                                </div>
+
+                                <!-- Square Footage -->
+                                <div>
+                                    <label for="sqft" class="block text-sm font-semibold text-almost-black mb-2">Square Footage Estimated</label>
+                                    <select id="sqft" name="square_footage"
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black bg-white">
+                                        <option value="" disabled selected>Select estimated size</option>
+                                        <option value="Under 1,000 sqft">Under 1,000 sqft</option>
+                                        <option value="1,000 - 2,000 sqft">1,000 - 2,000 sqft</option>
+                                        <option value="2,000 - 3,000 sqft">2,000 - 3,000 sqft</option>
+                                        <option value="3,000+ sqft">3,000+ sqft</option>
+                                    </select>
+                                </div>
+
+                                <!-- Entire House -->
+                                <div>
+                                    <label class="block text-sm font-semibold text-almost-black mb-2">Entire house cleaned?</label>
+                                    <div class="flex items-center space-x-6 mt-3">
+                                        <label class="flex items-center cursor-pointer">
+                                            <input type="radio" name="entire_house" value="Yes" class="w-4 h-4 text-primary-blue border-gray-300 focus:ring-primary-blue">
+                                            <span class="ml-2 text-almost-black">Yes</span>
+                                        </label>
+                                        <label class="flex items-center cursor-pointer">
+                                            <input type="radio" name="entire_house" value="No" class="w-4 h-4 text-primary-blue border-gray-300 focus:ring-primary-blue">
+                                            <span class="ml-2 text-almost-black">No</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Additional Details -->
+                            <div class="mt-6">
+                                <label for="details" class="block text-sm font-semibold text-almost-black mb-2">Additional Details</label>
+                                <textarea id="details" name="additional_details" rows="4" placeholder="Tell us about any specific needs or questions..."
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-almost-black placeholder-gray-medium/50 resize-vertical"></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="mt-8">
+                                <button type="submit" class="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white px-10 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-3">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                    Send via WhatsApp
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info Sidebar (1/3 width on desktop) -->
+                    <div id="contact-info" class="opacity-0">
+                        <div class="bg-dark-2 rounded-2xl p-6 sm:p-8 md:p-10 h-full">
+                            <h3 class="font-heading text-2xl font-bold text-white mb-8">Get in Touch</h3>
+
+                            <!-- Phone -->
+                            <div class="mb-8">
+                                <div class="flex items-center mb-3">
+                                    <svg class="w-5 h-5 text-copper mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                    </svg>
+                                    <span class="text-white/60 text-sm font-semibold uppercase tracking-wider">Phone</span>
+                                </div>
+                                <a href="tel:+10000000000" class="text-white text-lg hover:text-copper transition-colors duration-300 phone-number">(000) 000-0000</a>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="mb-8">
+                                <div class="flex items-center mb-3">
+                                    <svg class="w-5 h-5 text-copper mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                    <span class="text-white/60 text-sm font-semibold uppercase tracking-wider">Email</span>
+                                </div>
+                                <a href="mailto:info@homesolutionsncllc.com" class="text-white text-lg hover:text-copper transition-colors duration-300 contact-email break-all">info@homesolutionsncllc.com</a>
+                            </div>
+
+                            <!-- Operating Hours -->
+                            <div class="mb-8">
+                                <div class="flex items-center mb-3">
+                                    <svg class="w-5 h-5 text-copper mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span class="text-white/60 text-sm font-semibold uppercase tracking-wider">Operating Hours</span>
+                                </div>
+                                <p class="text-white text-lg operating-hours">Mon - Sat: 8:00 AM - 6:00 PM</p>
+                                <p class="text-white/60 text-sm mt-1">Sunday: Closed</p>
+                            </div>
+
+                            <!-- Service Areas -->
+                            <div>
+                                <div class="flex items-center mb-3">
+                                    <svg class="w-5 h-5 text-copper mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                    <span class="text-white/60 text-sm font-semibold uppercase tracking-wider">Serving</span>
+                                </div>
+                                <p class="text-white text-lg service-areas">Raleigh, Cary, Apex, Durham, Chapel Hill and surrounding areas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
     </main>
 
