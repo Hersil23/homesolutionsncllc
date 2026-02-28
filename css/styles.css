@@ -71,18 +71,6 @@ main {
     backdrop-filter: none;
 }
 
-/* Cover subpixel gap between mobile browser UI and navbar */
-#navbar::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background-color: #303643;
-    z-index: 51;
-}
-
 /* Navbar solid state (after scroll) */
 #navbar.scrolled {
     background-color: #303643;
@@ -145,8 +133,8 @@ main {
     line-height: 0;
     font-size: 0;
     /* Extend hero slightly to cover any subpixel gap at top/bottom */
-    margin-top: -3px;
-    padding-top: 3px;
+    margin-top: -5px;
+    padding-top: 5px;
     margin-bottom: -2px;
 }
 
