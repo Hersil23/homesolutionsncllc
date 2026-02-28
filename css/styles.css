@@ -28,6 +28,13 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
+    /* Match hero background so no white line shows at top */
+    background-color: #303643;
+}
+
+/* Reset background to white after hero (main content area) */
+main {
+    background-color: #ffffff;
 }
 
 /* Remove default focus outline and add custom */
@@ -126,8 +133,8 @@ body {
     line-height: 0;
     font-size: 0;
     /* Extend hero slightly to cover any subpixel gap at top/bottom */
-    margin-top: -1px;
-    padding-top: 1px;
+    margin-top: -3px;
+    padding-top: 3px;
     margin-bottom: -2px;
 }
 
