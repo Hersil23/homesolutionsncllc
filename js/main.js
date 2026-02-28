@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initGSAPAnimations();
     initBeforeAfterSliders();
     initWhatsAppButton();
+    initWhatsAppForm();
 });
 
 
@@ -375,6 +376,8 @@ function initGSAPAnimations() {
     // ----- TESTIMONIALS ANIMATION -----
     initTestimonialsAnimation();
 
+    // ----- CONTACT SECTION ANIMATION -----
+    initContactAnimation();
 }
 
 
@@ -610,6 +613,44 @@ function initTestimonialsAnimation() {
 }
 
 
+/* Contact Form & Info - Fade in from below */
+function initContactAnimation() {
+    const formWrapper = document.getElementById('quote-form-wrapper');
+    const contactInfo = document.getElementById('contact-info');
+
+    if (formWrapper) {
+        gsap.to(formWrapper, {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '#contact',
+                start: 'top 75%',
+                toggleActions: 'play none none none'
+            }
+        });
+        gsap.set(formWrapper, { y: 50 });
+    }
+
+    if (contactInfo) {
+        gsap.to(contactInfo, {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            delay: 0.2,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '#contact',
+                start: 'top 75%',
+                toggleActions: 'play none none none'
+            }
+        });
+        gsap.set(contactInfo, { y: 50 });
+    }
+}
+
+
 /* ============================================== */
 /* 9. BEFORE/AFTER SLIDERS - Drag functionality   */
 /* ============================================== */
@@ -749,7 +790,92 @@ function initWhatsAppButton() {
 
 
 /* ============================================== */
-/* 11. PERFORMANCE - Resize and visibility        */
+/* 11. WHATSAPP FORM - Build & send via WhatsApp  */
+/* ============================================== */
+
+function initWhatsAppForm() {
+    const form = document.getElementById('quote-form');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Gather field values
+        const name = form.querySelector('#full-name').value.trim();
+        const phone = form.querySelector('#phone').value.trim();
+        const email = form.querySelector('#email').value.trim();
+        const serviceType = form.querySelector('#service-type').value;
+        const sqft = form.querySelector('#sqft').value;
+        const entireHouse = form.querySelector('input[name="entire_house"]:checked');
+        const details = form.querySelector('#details').value.trim();
+
+        // Validate required fields
+        const required = [
+            { el: form.querySelector('#full-name'), value: name, label: 'Full Name' },
+            { el: form.querySelector('#phone'), value: phone, label: 'Phone' },
+            { el: form.querySelector('#email'), value: email, label: 'Email' },
+            { el: form.querySelector('#service-type'), value: serviceType, label: 'Type of Service' },
+        ];
+
+        let isValid = true;
+
+        required.forEach(field => {
+            if (!field.value) {
+                isValid = false;
+                field.el.classList.add('border-red-500', 'ring-2', 'ring-red-200');
+                // Shake animation
+                gsap.fromTo(field.el, { x: -6 }, { x: 0, duration: 0.4, ease: 'elastic.out(1, 0.3)' });
+            } else {
+                field.el.classList.remove('border-red-500', 'ring-2', 'ring-red-200');
+            }
+        });
+
+        if (!isValid) return;
+
+        // Build formatted WhatsApp message
+        let message = `🏠 *New Quote Request*\n`;
+        message += `──────────────\n`;
+        message += `👤 *Name:* ${name}\n`;
+        message += `📞 *Phone:* ${phone}\n`;
+        message += `📧 *Email:* ${email}\n`;
+        message += `🧹 *Service:* ${serviceType}\n`;
+
+        if (sqft) {
+            message += `📐 *Size:* ${sqft}\n`;
+        }
+
+        if (entireHouse) {
+            message += `🏡 *Entire House:* ${entireHouse.value}\n`;
+        }
+
+        if (details) {
+            message += `──────────────\n`;
+            message += `📝 *Details:*\n${details}\n`;
+        }
+
+        message += `──────────────\n`;
+        message += `Sent from homesolutionsncllc.com`;
+
+        // Open WhatsApp with pre-filled message
+        const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(message)}`;
+        window.open(waUrl, '_blank');
+    });
+
+    // Remove red border on input when user starts typing
+    const inputs = form.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('input', () => {
+            input.classList.remove('border-red-500', 'ring-2', 'ring-red-200');
+        });
+        input.addEventListener('change', () => {
+            input.classList.remove('border-red-500', 'ring-2', 'ring-red-200');
+        });
+    });
+}
+
+
+/* ============================================== */
+/* 12. PERFORMANCE - Resize and visibility        */
 /* ============================================== */
 
 // Refresh ScrollTrigger on window resize (debounced)

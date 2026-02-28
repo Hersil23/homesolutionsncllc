@@ -353,7 +353,45 @@ body {
 
 
 /* ============================================== */
-/* 11. FOOTER                                     */
+/* 11. CONTACT FORM                               */
+/* ============================================== */
+
+/* Form input focus state */
+#quote-form input:focus,
+#quote-form select:focus,
+#quote-form textarea:focus {
+    border-color: #50a8e5;
+    box-shadow: 0 0 0 3px rgba(80, 168, 229, 0.15);
+}
+
+/* Select dropdown arrow custom style */
+#quote-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2393918A' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+/* Radio button custom accent */
+#quote-form input[type="radio"] {
+    accent-color: #50a8e5;
+}
+
+/* Placeholder text styling */
+#quote-form ::placeholder {
+    color: rgba(147, 145, 138, 0.5);
+}
+
+/* Submit button hover glow */
+#quote-form button[type="submit"]:hover {
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+}
+
+
+/* ============================================== */
+/* 12. FOOTER                                     */
 /* ============================================== */
 
 /* Footer link hover underline effect */
