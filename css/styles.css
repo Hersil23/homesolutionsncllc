@@ -333,78 +333,21 @@ body {
 
 
 /* ============================================== */
-/* 10. CONTACT / QUOTE FORM                       */
+/* 10. WHATSAPP FLOATING BUTTON                   */
 /* ============================================== */
 
-/* Form input focus animation */
-#quote-form input:focus,
-#quote-form select:focus,
-#quote-form textarea:focus {
-    border-color: #50a8e5;
-    box-shadow: 0 0 0 3px rgba(80, 168, 229, 0.15);
+/* WhatsApp button pulse animation */
+#whatsapp-btn {
+    animation: whatsappPulse 3s ease-in-out infinite;
+    animation-delay: 3s;
 }
 
-/* Form input placeholder */
-#quote-form input::placeholder,
-#quote-form textarea::placeholder {
-    color: rgba(147, 145, 138, 0.6);
-}
-
-/* Radio button custom style */
-#quote-form input[type="radio"] {
-    accent-color: #50a8e5;
-}
-
-/* Select dropdown arrow color */
-#quote-form select {
-    appearance: none;
-    -webkit-appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2393918A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 16px;
-    padding-right: 40px;
-}
-
-/* Submit button loading state */
-#quote-form button[type="submit"].loading {
-    pointer-events: none;
-    opacity: 0.7;
-}
-
-#quote-form button[type="submit"].loading::after {
-    content: '';
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    margin-left: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-top-color: #ffffff;
-    border-radius: 50%;
-    animation: spin 0.6s linear infinite;
-    vertical-align: middle;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
+@keyframes whatsappPulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
     }
-}
-
-/* Form success/error message animations */
-#form-success,
-#form-error {
-    animation: fadeInUp 0.4s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    50% {
+        box-shadow: 0 4px 30px rgba(37, 211, 102, 0.7);
     }
 }
 
@@ -478,32 +421,9 @@ img {
 
 
 /* ============================================== */
-/* 13. SCROLLBAR CUSTOMIZATION                    */
+/* 13. SCROLLBAR - Use browser defaults           */
 /* ============================================== */
-
-/* Webkit scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #F8F9FA;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #93918A;
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #303643;
-}
-
-/* Firefox scrollbar */
-html {
-    scrollbar-width: thin;
-    scrollbar-color: #93918A #F8F9FA;
-}
+/* Scrollbar customization removed — using native browser scrollbar */
 
 
 /* ============================================== */
@@ -513,22 +433,77 @@ html {
 /* Extra small screens (below 375px) */
 @media (max-width: 374px) {
     #hero h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     #hero p {
-        font-size: 0.95rem;
+        font-size: 0.875rem;
     }
 
-    .service-card .p-6 {
+    #hero-logo img {
+        height: 5rem;
+    }
+
+    .service-card .p-6,
+    .service-card .p-5 {
+        padding: 0.875rem;
+    }
+
+    /* Tighter section padding */
+    section {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    /* Smaller step circles */
+    .step-item .w-14 {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1rem;
+    }
+
+    /* Contact form adjustments */
+    #quote-form {
         padding: 1rem;
+    }
+
+    #quote-form input,
+    #quote-form select,
+    #quote-form textarea {
+        font-size: 0.875rem;
+        padding: 0.625rem 0.75rem;
+    }
+
+    /* Footer tighter spacing */
+    footer {
+        font-size: 0.8125rem;
+    }
+
+    /* Slider handle smaller on tiny screens */
+    .slider-handle > div {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .slider-handle svg {
+        width: 0.875rem;
+        height: 0.875rem;
     }
 }
 
-/* Small screens - phone landscape */
+/* Small screens - phones (375px - 639px) */
 @media (min-width: 375px) and (max-width: 639px) {
     #hero h1 {
-        font-size: 2.25rem;
+        font-size: 2rem;
+    }
+
+    #hero-logo img {
+        height: 6rem;
+    }
+
+    /* Contact info email break */
+    .contact-email {
+        word-break: break-all;
     }
 }
 

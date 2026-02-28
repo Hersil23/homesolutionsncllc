@@ -28,7 +28,8 @@ const BUSINESS = {
         tiktok: '#',                    // POR CONFIRMAR CON EL CLIENTE
     },
     googleMapsReviews: '#',             // POR CONFIRMAR CON EL CLIENTE
-    formAction: 'https://formspree.io/f/YOUR_FORM_ID', // POR CONFIRMAR CON EL CLIENTE
+    whatsapp: '10000000000',            // POR CONFIRMAR CON EL CLIENTE (number without + or spaces)
+    whatsappMessage: "Hi! I'm interested in your cleaning services.", // Default WhatsApp message
     domain: 'https://www.homesolutionsncllc.com',       // POR CONFIRMAR CON EL CLIENTE
 };
 
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initActiveNavHighlight();
     initGSAPAnimations();
     initBeforeAfterSliders();
-    initContactForm();
+    initWhatsAppButton();
 });
 
 
@@ -105,11 +106,19 @@ function populateBusinessData() {
         }
     });
 
-    // Update form action
-    const form = document.getElementById('quote-form');
-    if (form) {
-        form.setAttribute('action', BUSINESS.formAction);
+    // Update all WhatsApp links (floating button + CTA buttons)
+    const waMsg = encodeURIComponent(BUSINESS.whatsappMessage);
+    const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${waMsg}`;
+
+    const whatsappBtn = document.getElementById('whatsapp-btn');
+    if (whatsappBtn) {
+        whatsappBtn.setAttribute('href', waUrl);
     }
+
+    const whatsappCTAs = document.querySelectorAll('.whatsapp-cta');
+    whatsappCTAs.forEach(cta => {
+        cta.setAttribute('href', waUrl);
+    });
 
     // Update social media links
     const socialLinks = document.querySelectorAll('footer a[aria-label]');
@@ -366,8 +375,6 @@ function initGSAPAnimations() {
     // ----- TESTIMONIALS ANIMATION -----
     initTestimonialsAnimation();
 
-    // ----- CONTACT FORM ANIMATION -----
-    initContactAnimation();
 }
 
 
@@ -603,46 +610,6 @@ function initTestimonialsAnimation() {
 }
 
 
-/* Contact Form & Info - Fade in from below */
-function initContactAnimation() {
-    const formWrapper = document.getElementById('quote-form-wrapper');
-    const contactInfo = document.getElementById('contact-info');
-
-    if (formWrapper) {
-        gsap.to(formWrapper, {
-            opacity: 1,
-            y: 0,
-            duration: 0.9,
-            ease: 'power2.out',
-            scrollTrigger: {
-                trigger: '#contact',
-                start: 'top 75%',
-                toggleActions: 'play none none none'
-            }
-        });
-
-        gsap.set(formWrapper, { y: 50 });
-    }
-
-    if (contactInfo) {
-        gsap.to(contactInfo, {
-            opacity: 1,
-            y: 0,
-            duration: 0.9,
-            delay: 0.2,
-            ease: 'power2.out',
-            scrollTrigger: {
-                trigger: '#contact',
-                start: 'top 75%',
-                toggleActions: 'play none none none'
-            }
-        });
-
-        gsap.set(contactInfo, { y: 50 });
-    }
-}
-
-
 /* ============================================== */
 /* 9. BEFORE/AFTER SLIDERS - Drag functionality   */
 /* ============================================== */
@@ -749,131 +716,35 @@ function initBeforeAfterSliders() {
 
 
 /* ============================================== */
-/* 10. CONTACT FORM - Validation & submission     */
+/* 10. WHATSAPP BUTTON - Floating button setup    */
 /* ============================================== */
 
-function initContactForm() {
-    const form = document.getElementById('quote-form');
-    if (!form) return;
+function initWhatsAppButton() {
+    const whatsappBtn = document.getElementById('whatsapp-btn');
+    if (!whatsappBtn) return;
 
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const successMsg = document.getElementById('form-success');
-    const errorMsg = document.getElementById('form-error');
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // Hide previous messages
-        successMsg.classList.add('hidden');
-        errorMsg.classList.add('hidden');
-
-        // Basic validation
-        if (!validateForm(form)) return;
-
-        // Show loading state
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.classList.add('loading');
-        submitBtn.disabled = true;
-
-        try {
-            const formData = new FormData(form);
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if (response.ok) {
-                // Success
-                successMsg.classList.remove('hidden');
-                form.reset();
-
-                // Scroll to success message
-                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            } else {
-                // Server error
-                errorMsg.classList.remove('hidden');
-            }
-        } catch (error) {
-            // Network error
-            errorMsg.classList.remove('hidden');
-        } finally {
-            // Reset button state
-            submitBtn.textContent = originalText;
-            submitBtn.classList.remove('loading');
-            submitBtn.disabled = false;
-        }
-    });
-}
-
-
-/* Form Validation - Check required fields */
-function validateForm(form) {
-    let isValid = true;
-
-    // Remove previous error states
-    form.querySelectorAll('.error-border').forEach(el => {
-        el.classList.remove('error-border');
-    });
-
-    // Check required fields
-    const requiredFields = form.querySelectorAll('[required]');
-    requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-            isValid = false;
-            highlightField(field);
+    // Hide WhatsApp button when user is near the footer to avoid overlapping
+    ScrollTrigger.create({
+        trigger: 'footer',
+        start: 'top bottom',
+        end: 'bottom bottom',
+        onEnter: () => {
+            gsap.to(whatsappBtn, { opacity: 0, scale: 0.8, duration: 0.3, pointerEvents: 'none' });
+        },
+        onLeaveBack: () => {
+            gsap.to(whatsappBtn, { opacity: 1, scale: 1, duration: 0.3, pointerEvents: 'auto' });
         }
     });
 
-    // Validate email format
-    const emailField = form.querySelector('#email');
-    if (emailField && emailField.value.trim()) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(emailField.value.trim())) {
-            isValid = false;
-            highlightField(emailField);
-        }
-    }
-
-    // Validate phone format (basic - allows common US formats)
-    const phoneField = form.querySelector('#phone');
-    if (phoneField && phoneField.value.trim()) {
-        const phoneClean = phoneField.value.replace(/[\s\-\(\)\.]/g, '');
-        if (phoneClean.length < 10 || !/^\+?\d{10,15}$/.test(phoneClean)) {
-            isValid = false;
-            highlightField(phoneField);
-        }
-    }
-
-    return isValid;
-}
-
-
-/* Highlight invalid field with red border */
-function highlightField(field) {
-    field.style.borderColor = '#ef4444';
-    field.classList.add('error-border');
-
-    // Remove error state on focus
-    field.addEventListener('focus', function handler() {
-        field.style.borderColor = '';
-        field.classList.remove('error-border');
-        field.removeEventListener('focus', handler);
+    // Entrance animation - button appears after 2 seconds
+    gsap.set(whatsappBtn, { scale: 0, opacity: 0 });
+    gsap.to(whatsappBtn, {
+        scale: 1,
+        opacity: 1,
+        duration: 0.5,
+        delay: 2,
+        ease: 'back.out(1.7)'
     });
-
-    // Shake animation using GSAP
-    if (typeof gsap !== 'undefined') {
-        gsap.fromTo(field, {
-            x: -5
-        }, {
-            x: 0,
-            duration: 0.4,
-            ease: 'elastic.out(1, 0.3)'
-        });
-    }
 }
 
 
