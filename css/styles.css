@@ -124,16 +124,45 @@ main {
 /* 3. HERO SECTION - VIDEO LINE FIX              */
 /* ============================================== */
 
-/* Hero - dark background fallback */
+/* Hero - dark background fallback + eliminate all gaps */
 #hero {
     background-color: #303643;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    line-height: 0;
+    font-size: 0;
+    margin-top: -3px;
+    padding-top: 3px;
     margin-bottom: -2px;
 }
 
-/* Video element: block display eliminates inline gap */
+/* Reset font-size/line-height for hero content */
+#hero > .relative {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Video element: block display + scale trick to cover subpixel gaps */
 #hero video {
     display: block;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    transform: scale(1.01);
+    transform-origin: center center;
+    box-shadow: none;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Dark overlay must also cover extra area */
+#hero > .absolute.inset-0.bg-dark-1 {
+    margin: -2px;
 }
 
 /* Cover subpixel gap between hero and trust-bar */
@@ -155,7 +184,7 @@ main {
     z-index: 2;
 }
 
-/* Scroll indicator */
+/* Scroll indicator - reset font-size since hero has font-size:0 */
 #hero .absolute.bottom-8 {
     font-size: 0.75rem;
     line-height: 1.5;
