@@ -1,0 +1,603 @@
+/* ============================================== */
+/* HOME SOLUTIONS NC LLC - Custom Styles          */
+/* styles.css                                      */
+/* ============================================== */
+
+/* ============================================== */
+/* 1. BASE STYLES & RESETS                        */
+/* ============================================== */
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Remove default margin/padding and set box-sizing */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body base styles */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+/* Remove default focus outline and add custom */
+*:focus-visible {
+    outline: 2px solid #50a8e5;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Remove focus outline for mouse users */
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Selection color */
+::selection {
+    background-color: #50a8e5;
+    color: #ffffff;
+}
+
+::-moz-selection {
+    background-color: #50a8e5;
+    color: #ffffff;
+}
+
+
+/* ============================================== */
+/* 2. NAVBAR STYLES                               */
+/* ============================================== */
+
+/* Navbar transparent state (initial) */
+#navbar {
+    background-color: transparent;
+    backdrop-filter: none;
+}
+
+/* Navbar solid state (after scroll) */
+#navbar.scrolled {
+    background-color: #303643;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+/* Active nav link indicator */
+.nav-link.active {
+    color: #c27647;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #c27647;
+    border-radius: 1px;
+}
+
+/* Mobile menu transition */
+#mobile-menu {
+    transition: all 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+#mobile-menu.open {
+    max-height: 600px;
+    opacity: 1;
+    display: block;
+}
+
+/* Mobile nav link hover effect */
+.mobile-nav-link {
+    position: relative;
+    transition: padding-left 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+    padding-left: 8px;
+}
+
+
+/* ============================================== */
+/* 3. HERO SECTION                                */
+/* ============================================== */
+
+/* Video background positioning */
+#hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+/* Hero scroll indicator bounce animation */
+@keyframes gentleBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+#hero .animate-bounce {
+    animation: gentleBounce 2s infinite ease-in-out;
+}
+
+
+/* ============================================== */
+/* 4. TRUST BAR                                   */
+/* ============================================== */
+
+/* Trust item hover effect */
+.trust-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 1rem;
+}
+
+.trust-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+}
+
+
+/* ============================================== */
+/* 5. SERVICE CARDS                               */
+/* ============================================== */
+
+/* Service card image overlay gradient on hover */
+.service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #50a8e5, #c27647);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+    border-radius: 0 0 1rem 1rem;
+    z-index: 10;
+}
+
+.service-card:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* ============================================== */
+/* 6. HOW IT WORKS                                */
+/* ============================================== */
+
+/* Step number circle pulse on hover */
+.step-item:hover .w-14 {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Vertical connecting line for mobile */
+@media (max-width: 1023px) {
+    .step-item:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        bottom: -2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 2rem;
+        background-color: rgba(80, 168, 229, 0.2);
+    }
+}
+
+
+/* ============================================== */
+/* 7. ABOUT SECTION                               */
+/* ============================================== */
+
+/* Counter number animation smoothness */
+.counter {
+    font-variant-numeric: tabular-nums;
+    transition: color 0.3s ease;
+}
+
+/* About image decorative elements */
+#about-image .relative::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, rgba(80, 168, 229, 0.1), rgba(194, 118, 71, 0.1)) border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* ============================================== */
+/* 8. GALLERY - Before/After Slider               */
+/* ============================================== */
+
+/* Slider container */
+.before-after-slider {
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Before image wrapper - clips to reveal */
+.before-image-wrapper {
+    pointer-events: none;
+    border-right: none;
+}
+
+/* Before image must span full container width */
+.before-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Override inline style - actual width matches container */
+    min-width: 0 !important;
+    max-width: none !important;
+}
+
+/* Slider drag handle line */
+.slider-handle {
+    transition: none;
+    z-index: 20;
+    pointer-events: none;
+}
+
+/* Slider handle circle */
+.slider-handle > div {
+    pointer-events: auto;
+    cursor: ew-resize;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.slider-handle > div:hover {
+    transform: translate(-50%, -50%) scale(1.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Handle icon rotation for horizontal slider */
+.slider-handle svg {
+    transform: rotate(90deg);
+}
+
+/* Gallery labels */
+.before-after-slider span {
+    z-index: 15;
+    pointer-events: none;
+}
+
+
+/* ============================================== */
+/* 9. TESTIMONIALS                                */
+/* ============================================== */
+
+/* Testimonial card quote mark decoration */
+.testimonial-card {
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '\201C';
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 5rem;
+    line-height: 1;
+    color: rgba(80, 168, 229, 0.08);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Testimonial card hover lift */
+.testimonial-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+}
+
+
+/* ============================================== */
+/* 10. CONTACT / QUOTE FORM                       */
+/* ============================================== */
+
+/* Form input focus animation */
+#quote-form input:focus,
+#quote-form select:focus,
+#quote-form textarea:focus {
+    border-color: #50a8e5;
+    box-shadow: 0 0 0 3px rgba(80, 168, 229, 0.15);
+}
+
+/* Form input placeholder */
+#quote-form input::placeholder,
+#quote-form textarea::placeholder {
+    color: rgba(147, 145, 138, 0.6);
+}
+
+/* Radio button custom style */
+#quote-form input[type="radio"] {
+    accent-color: #50a8e5;
+}
+
+/* Select dropdown arrow color */
+#quote-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2393918A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+/* Submit button loading state */
+#quote-form button[type="submit"].loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+#quote-form button[type="submit"].loading::after {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Form success/error message animations */
+#form-success,
+#form-error {
+    animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ============================================== */
+/* 11. FOOTER                                     */
+/* ============================================== */
+
+/* Footer link hover underline effect */
+footer a {
+    position: relative;
+}
+
+footer .text-white\/60:hover {
+    color: #c27647;
+}
+
+/* Social media icon hover */
+footer a[aria-label] svg {
+    transition: transform 0.3s ease;
+}
+
+footer a[aria-label]:hover svg {
+    transform: scale(1.1);
+}
+
+
+/* ============================================== */
+/* 12. UTILITY CLASSES                            */
+/* ============================================== */
+
+/* Prevent body scroll when mobile menu is open */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Section divider (optional decorative line) */
+.section-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #50a8e5, #c27647);
+    border-radius: 2px;
+    margin: 0 auto 2rem;
+}
+
+/* Animated gradient background for special elements */
+.gradient-bg {
+    background: linear-gradient(135deg, #50a8e5 0%, #4895cc 50%, #c27647 100%);
+}
+
+/* Image placeholder styling (shown while images load) */
+img {
+    background-color: #F8F9FA;
+}
+
+/* Loading skeleton animation */
+.skeleton {
+    background: linear-gradient(90deg, #F8F9FA 25%, #e9ecef 50%, #F8F9FA 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+
+/* ============================================== */
+/* 13. SCROLLBAR CUSTOMIZATION                    */
+/* ============================================== */
+
+/* Webkit scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F8F9FA;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #93918A;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #303643;
+}
+
+/* Firefox scrollbar */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #93918A #F8F9FA;
+}
+
+
+/* ============================================== */
+/* 14. RESPONSIVE ADJUSTMENTS                     */
+/* ============================================== */
+
+/* Extra small screens (below 375px) */
+@media (max-width: 374px) {
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    #hero p {
+        font-size: 0.95rem;
+    }
+
+    .service-card .p-6 {
+        padding: 1rem;
+    }
+}
+
+/* Small screens - phone landscape */
+@media (min-width: 375px) and (max-width: 639px) {
+    #hero h1 {
+        font-size: 2.25rem;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 640px) and (max-width: 1023px) {
+    /* Ensure 2-column service cards have equal height */
+    .service-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .service-card .p-6 {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .service-card .p-6 p {
+        flex: 1;
+    }
+}
+
+/* Desktop wide screens */
+@media (min-width: 1280px) {
+    /* Slightly larger hero text on wide screens */
+    #hero h1 {
+        font-size: 4.5rem;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .before-after-slider {
+        cursor: default;
+    }
+}
+
+/* Print styles */
+@media print {
+    #navbar,
+    #hero video,
+    .slider-handle,
+    #mobile-menu-btn,
+    footer .flex.items-center.space-x-4 {
+        display: none !important;
+    }
+
+    body {
+        color: #000;
+        background: #fff;
+    }
+
+    section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    a[href]::after {
+        content: ' (' attr(href) ')';
+        font-size: 0.8em;
+        color: #666;
+    }
+}
