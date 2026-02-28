@@ -28,7 +28,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
-    background-color: #303643;
 }
 
 /* Remove default focus outline and add custom */
@@ -126,6 +125,22 @@ body {
 #hero video {
     display: block;
     object-fit: cover;
+}
+
+/* Cover subpixel gap between hero and trust-bar */
+#trust-bar {
+    position: relative;
+    z-index: 1;
+}
+
+#trust-bar::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: #F8F9FA;
 }
 
 
