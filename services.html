@@ -10,7 +10,23 @@
     <meta name="description" content="Professional house cleaning services in Raleigh and Wake County, NC. Recurring, one-time, move-in/out, apartment cleaning and more. Get a free estimate.">
     <meta name="robots" content="index, follow">
 
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Our Services | Home Solutions NC - Professional House Cleaning">
+    <meta property="og:description" content="Professional house cleaning services in Raleigh and Wake County, NC. Recurring, one-time, move-in/out, apartment cleaning and more.">
+    <meta property="og:image" content="https://www.homesolutionsnc.com/assets/img/og-image.jpg">
+    <meta property="og:url" content="https://www.homesolutionsnc.com/services.html">
+    <meta property="og:site_name" content="Home Solutions NC">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Services | Home Solutions NC">
+    <meta name="twitter:description" content="Professional house cleaning services in Raleigh and Wake County, NC. Recurring, one-time, move-in/out and more.">
+    <meta name="twitter:image" content="https://www.homesolutionsnc.com/assets/img/og-image.jpg">
+
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="canonical" href="https://www.homesolutionsnc.com/services.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,6 +58,34 @@
     </script>
 
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Schema.org Service Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "House Cleaning",
+        "provider": {
+            "@type": "HouseCleaningService",
+            "name": "Home Solutions NC LLC",
+            "url": "https://www.homesolutionsnc.com",
+            "telephone": "+1-919-917-4604",
+            "areaServed": ["Raleigh", "Clayton", "Garner", "Knightdale", "Rolesville", "Wake Forest", "Wendell", "Zebulon"]
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Cleaning Services",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Recurring Cleaning"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "One-Time Cleaning"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Occasional Cleaning"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Apartment & Condo Cleaning"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Move-In Cleaning"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Move-Out Cleaning"}}
+            ]
+        }
+    }
+    </script>
 </head>
 
 <body class="font-body text-almost-black bg-white overflow-x-hidden">

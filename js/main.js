@@ -1,12 +1,21 @@
-/* ============================================== */
-/* HOME SOLUTIONS NC LLC - Main JavaScript        */
-/* main.js                                         */
-/* ============================================== */
+/**
+ * @file main.js
+ * @description Core JavaScript for Home Solutions NC LLC website.
+ *              Handles navigation, animations, form submission, and UI interactions.
+ * @author herasi.dev
+ * @version 2.0.0
+ * @license MIT
+ */
 
 /* ============================================== */
 /* 1. BUSINESS DATA - CENTRALIZED                 */
 /* ============================================== */
 
+/**
+ * Centralized business information used across the site.
+ * Single source of truth for contact details, service areas, and branding.
+ * @constant {Object}
+ */
 const BUSINESS = {
     name: 'Home Solutions NC LLC',
     slogan: 'A Cleaner Home Starts Here',
@@ -27,6 +36,10 @@ const BUSINESS = {
 /* 2. DOM READY - Initialize everything           */
 /* ============================================== */
 
+/**
+ * Main initialization. Runs all modules after DOM is fully loaded.
+ * GSAP animations are conditionally initialized only if the library is available.
+ */
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
     initMobileMenu();
@@ -37,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initWhatsAppButton();
     initHashNavigation();
 
-    // Only init GSAP if available
     if (typeof gsap !== 'undefined') {
         initGSAPAnimations();
     }
@@ -48,6 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
 /* 3. NAVBAR - Scroll effect and state management */
 /* ============================================== */
 
+/**
+ * Initializes the navbar scroll behavior.
+ * - On the home page (with #hero): toggles between transparent and solid background
+ *   based on scroll position using requestAnimationFrame for performance.
+ * - On sub-pages (no #hero): immediately applies solid background.
+ */
 function initNavbar() {
     const navbar = document.getElementById('navbar');
     if (!navbar) return;
@@ -55,7 +73,6 @@ function initNavbar() {
     const hero = document.getElementById('hero');
     const scrollThreshold = 80;
 
-    // Sub-pages (no hero): always show solid navbar
     if (!hero) {
         navbar.classList.add('scrolled');
         return;
@@ -88,6 +105,14 @@ function initNavbar() {
 /* 4. MOBILE MENU - Toggle hamburger menu         */
 /* ============================================== */
 
+/**
+ * Initializes the mobile hamburger menu with full interaction support.
+ * Features:
+ * - Toggle open/close with animated icon swap (hamburger/X)
+ * - Auto-close on nav link click, CTA click, Escape key, or outside click
+ * - Updates aria-label for accessibility
+ * - Prevents body scroll when menu is open via .menu-open class
+ */
 function initMobileMenu() {
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -133,10 +158,14 @@ function initMobileMenu() {
         }
     });
 
+    /**
+     * Toggles the mobile menu open/closed state.
+     * @param {boolean} open - Whether to open (true) or close (false) the menu
+     */
     function toggleMenu(open) {
         if (open) {
             mobileMenu.classList.remove('hidden');
-            mobileMenu.offsetHeight;
+            mobileMenu.offsetHeight; // Force reflow for CSS transition
             mobileMenu.classList.add('open');
             hamburgerIcon.classList.add('hidden');
             closeIcon.classList.remove('hidden');
@@ -162,6 +191,10 @@ function initMobileMenu() {
 /* 5. SMOOTH SCROLL - Anchor link scrolling       */
 /* ============================================== */
 
+/**
+ * Enables smooth scrolling for all anchor links (href="#section").
+ * Accounts for fixed navbar height to prevent content from hiding behind it.
+ */
 function initSmoothScroll() {
     const links = document.querySelectorAll('a[href^="#"]');
 
@@ -191,6 +224,11 @@ function initSmoothScroll() {
 /* 6. HASH NAVIGATION - Handle cross-page hashes  */
 /* ============================================== */
 
+/**
+ * Handles cross-page hash navigation (e.g., services.html linking to index.html#faqs).
+ * Waits 300ms for DOM to settle before scrolling to the target section,
+ * accounting for the fixed navbar height.
+ */
 function initHashNavigation() {
     if (window.location.hash) {
         const target = document.querySelector(window.location.hash);
@@ -210,17 +248,26 @@ function initHashNavigation() {
 /* 7. ACTIVE NAV HIGHLIGHT - Page-based + scroll  */
 /* ============================================== */
 
+/**
+ * Highlights the current page's nav link with the .active class.
+ * Two modes:
+ * - Page-based: matches the current URL path to nav link href
+ * - Scroll-based (index.html only): updates active state for hash-linked
+ *   sections (#faqs, etc.) as the user scrolls through them
+ */
 function initActiveNavHighlight() {
     const navLinks = document.querySelectorAll('.nav-link');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
     if (navLinks.length === 0) return;
 
-    // Determine current page
     const currentPath = window.location.pathname;
     const currentPage = currentPath.split('/').pop() || 'index.html';
 
-    // Highlight page-based nav links
+    /**
+     * Adds .active class to nav links matching the current page.
+     * @param {NodeList} links - Collection of nav link elements to check
+     */
     function highlightPageLink(links) {
         links.forEach(link => {
             const href = link.getAttribute('href');
@@ -229,7 +276,6 @@ function initActiveNavHighlight() {
             if (linkPage === currentPage ||
                 (currentPage === '' && linkPage === 'index.html') ||
                 (currentPage === 'index.html' && linkPage === 'index.html')) {
-                // Only mark Home as active on index, not hash links
                 if (!href.startsWith('#')) {
                     link.classList.add('active');
                 }
@@ -242,10 +288,10 @@ function initActiveNavHighlight() {
     highlightPageLink(navLinks);
     highlightPageLink(mobileNavLinks);
 
-    // On index page, also do scroll-based highlighting for #faqs
     const sections = document.querySelectorAll('section[id]');
     if (sections.length === 0) return;
 
+    /** Updates active nav link based on current scroll position. */
     function highlightScrollNav() {
         const scrollPosition = window.scrollY + 150;
 
@@ -292,6 +338,11 @@ function initActiveNavHighlight() {
 /* 8. FAQ ACCORDION                               */
 /* ============================================== */
 
+/**
+ * Initializes the FAQ accordion behavior.
+ * Only one FAQ can be open at a time -- clicking a new item
+ * automatically closes any previously opened item.
+ */
 function initFAQAccordion() {
     const faqItems = document.querySelectorAll('.faq-item');
     if (faqItems.length === 0) return;
@@ -301,13 +352,11 @@ function initFAQAccordion() {
         if (!toggle) return;
 
         toggle.addEventListener('click', () => {
-            // Close all other items
             faqItems.forEach(other => {
                 if (other !== item && other.classList.contains('open')) {
                     other.classList.remove('open');
                 }
             });
-            // Toggle current item
             item.classList.toggle('open');
         });
     });
@@ -318,6 +367,16 @@ function initFAQAccordion() {
 /* 9. CONTACT FORM - Submission handler           */
 /* ============================================== */
 
+/**
+ * Initializes the contact form with validation and WhatsApp submission.
+ * Flow:
+ * 1. Validates required fields (name, email, service) with visual feedback
+ * 2. Builds a formatted message from form data
+ * 3. Opens WhatsApp Web/App with the pre-filled message
+ * 4. Shows a success confirmation on the submit button for 3 seconds
+ *
+ * Also clears validation errors on user input/change events.
+ */
 function initContactForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
@@ -331,7 +390,6 @@ function initContactForm() {
         const phone = form.querySelector('#contact-phone').value.trim();
         const message = form.querySelector('#contact-message').value.trim();
 
-        // Validate required fields
         const required = [
             { el: form.querySelector('#contact-name'), value: name, label: 'Full Name' },
             { el: form.querySelector('#contact-email'), value: email, label: 'Email' },
@@ -354,7 +412,6 @@ function initContactForm() {
 
         if (!isValid) return;
 
-        // Build WhatsApp message
         let msg = `New Estimate Request\n`;
         msg += `---\n`;
         msg += `Name: ${name}\n`;
@@ -371,7 +428,6 @@ function initContactForm() {
         const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(msg)}`;
         window.open(waUrl, '_blank');
 
-        // Show success feedback
         const btn = form.querySelector('button[type="submit"]');
         if (btn) {
             const originalText = btn.innerHTML;
@@ -384,7 +440,6 @@ function initContactForm() {
         }
     });
 
-    // Remove red border on input
     const inputs = form.querySelectorAll('input, select, textarea');
     inputs.forEach(input => {
         input.addEventListener('input', () => {
@@ -401,35 +456,32 @@ function initContactForm() {
 /* 10. GSAP ANIMATIONS - All scroll animations    */
 /* ============================================== */
 
+/**
+ * Master GSAP initialization. Registers ScrollTrigger and conditionally
+ * initializes animations based on which elements exist on the current page.
+ * This allows a single JS file to serve all pages without errors.
+ */
 function initGSAPAnimations() {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Hero animation (index page only)
     if (document.getElementById('hero')) {
         initHeroAnimation();
     }
 
-    // Services cards
     initServicesAnimation();
-
-    // About section
     initAboutAnimation();
-
-    // Service area
     initServiceAreaAnimation();
-
-    // FAQs
     initFAQsAnimation();
-
-    // Testimonials
     initTestimonialsAnimation();
-
-    // Sub-page content fade-in
     initSubPageAnimations();
 }
 
 
-/* Hero Section - Timeline animation on load */
+/**
+ * Hero section entrance animation (index.html only).
+ * Sequentially fades in: title -> subtitle -> badge -> buttons
+ * using a GSAP timeline with staggered overlaps.
+ */
 function initHeroAnimation() {
     const heroTimeline = gsap.timeline({
         defaults: { ease: 'power3.out', duration: 1 }
@@ -447,7 +499,10 @@ function initHeroAnimation() {
 }
 
 
-/* Services - Cards stagger from below */
+/**
+ * Service cards scroll animation.
+ * Cards stagger upward into view when the #services section enters the viewport.
+ */
 function initServicesAnimation() {
     const serviceCards = document.querySelectorAll('.service-card');
     if (serviceCards.length === 0) return;
@@ -469,7 +524,11 @@ function initServicesAnimation() {
 }
 
 
-/* About - Text from left, image from right */
+/**
+ * About section scroll animation.
+ * Text slides in from the left, image slides in from the right.
+ * Each element animates independently when #about enters the viewport.
+ */
 function initAboutAnimation() {
     const aboutText = document.getElementById('about-text');
     const aboutImage = document.getElementById('about-image');
@@ -506,7 +565,10 @@ function initAboutAnimation() {
 }
 
 
-/* Service Area - Cities stagger in */
+/**
+ * Service area cities scroll animation.
+ * City tags stagger upward into view when #service-area enters the viewport.
+ */
 function initServiceAreaAnimation() {
     const areaCities = document.querySelectorAll('.area-city');
     if (areaCities.length === 0) return;
@@ -528,7 +590,10 @@ function initServiceAreaAnimation() {
 }
 
 
-/* FAQs - Items stagger in */
+/**
+ * FAQ items scroll animation.
+ * FAQ accordion items stagger upward into view when #faqs enters the viewport.
+ */
 function initFAQsAnimation() {
     const faqItems = document.querySelectorAll('.faq-item');
     if (faqItems.length === 0) return;
@@ -550,7 +615,10 @@ function initFAQsAnimation() {
 }
 
 
-/* Testimonials - Cards stagger in */
+/**
+ * Testimonial cards scroll animation.
+ * Cards stagger upward into view when #testimonials enters the viewport.
+ */
 function initTestimonialsAnimation() {
     const testimonialCards = document.querySelectorAll('.testimonial-card');
     if (testimonialCards.length === 0) return;
@@ -572,7 +640,12 @@ function initTestimonialsAnimation() {
 }
 
 
-/* Sub-page content - Generic fade-in for .animate-on-scroll */
+/**
+ * Generic fade-in animation for sub-page content.
+ * Any element with the .animate-on-scroll class will fade in and
+ * slide up when it enters the viewport. Used on services.html,
+ * about.html, and contact.html.
+ */
 function initSubPageAnimations() {
     const elements = document.querySelectorAll('.animate-on-scroll');
     if (elements.length === 0) return;
@@ -599,6 +672,12 @@ function initSubPageAnimations() {
 /* 11. WHATSAPP BUTTON - Floating button setup    */
 /* ============================================== */
 
+/**
+ * Initializes the floating WhatsApp button behavior.
+ * - Appears with a scale-in animation after a 2-second delay
+ * - Automatically hides when scrolled near the footer to prevent overlap
+ * - Gracefully degrades without GSAP (simple display without animation)
+ */
 function initWhatsAppButton() {
     const whatsappBtn = document.getElementById('whatsapp-btn');
     const footer = document.querySelector('footer');
@@ -629,6 +708,10 @@ function initWhatsAppButton() {
         }
     });
 
+    /**
+     * Checks if the WhatsApp button overlaps with the footer
+     * and hides/shows it accordingly with a smooth animation.
+     */
     function checkFooterOverlap() {
         if (!footer || !btnReady) return;
 
@@ -667,6 +750,11 @@ function initWhatsAppButton() {
 /* 12. PERFORMANCE - Resize and visibility        */
 /* ============================================== */
 
+/**
+ * Debounced window resize handler.
+ * Refreshes ScrollTrigger calculations after resize settles (250ms debounce)
+ * to ensure scroll-triggered animations stay aligned with new layout.
+ */
 let resizeTimer;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
@@ -677,6 +765,12 @@ window.addEventListener('resize', () => {
     }, 250);
 }, { passive: true });
 
+/**
+ * Page visibility handler for the hero video.
+ * Pauses the background video when the browser tab is hidden
+ * and resumes playback when the tab becomes visible again.
+ * Saves battery and CPU on mobile devices.
+ */
 document.addEventListener('visibilitychange', () => {
     const heroVideo = document.querySelector('#hero video');
     if (!heroVideo) return;

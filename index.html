@@ -15,6 +15,7 @@
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
     <meta property="og:title" content="Home Solutions NC | A Cleaner Home Starts Here">
     <meta property="og:description" content="Professional house cleaning services in Raleigh and Wake County, NC. Family-owned, licensed & insured. Get a free estimate today!">
     <meta property="og:image" content="https://www.homesolutionsnc.com/assets/img/og-image.jpg">
@@ -32,6 +33,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="canonical" href="https://www.homesolutionsnc.com/">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,10 +75,12 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": "HouseCleaningService",
         "name": "Home Solutions NC LLC",
+        "url": "https://www.homesolutionsnc.com",
         "description": "Professional house cleaning services in Raleigh and Wake County, NC.",
-        "image": "assets/img/logo.svg",
+        "image": "https://www.homesolutionsnc.com/assets/img/logo.svg",
+        "logo": "https://www.homesolutionsnc.com/assets/img/logo.svg",
         "telephone": "+1-919-917-4604",
         "email": "info@homesolutionsnc.com",
         "address": {
@@ -89,10 +93,64 @@
             "Raleigh", "Clayton", "Garner", "Knightdale", "Rolesville", "Wake Forest", "Wendell", "Zebulon"
         ],
         "openingHours": "Mo-Sa 08:00-18:00",
-        "priceRange": "$$",
-        "sameAs": [
-            "https://www.instagram.com/homesolutionsnc",
-            "https://www.facebook.com/homesolutionsnc"
+        "priceRange": "$$"
+    }
+    </script>
+
+    <!-- Schema.org FAQPage Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Do I need to be home during the cleaning?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, you don't! Many of our clients in Raleigh and Wake County provide us with a key or entry code for convenience. We are happy to clean while you are at work or running errands, treating your home with the utmost respect."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are you insured and bonded?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, Home Solutions NC LLC is fully licensed, insured, and bonded for your peace of mind. This protects you and your property against any unforeseen accidents."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you bring your own supplies?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. We bring all necessary high-quality cleaning equipment and eco-friendly supplies to every job. Our products are safe for pets and children."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What forms of payment do you accept?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We accept all major credit cards, cash, and Venmo/Zelle for your convenience."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What areas do you serve?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We proudly provide house cleaning services throughout Wake County, NC including Raleigh, Clayton, Garner, Knightdale, Rolesville, Wake Forest, Wendell, and Zebulon."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer a satisfaction guarantee?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! If you are not happy with any part of our service, let us know within 24 hours and we will re-clean that area for free."
+                }
+            }
         ]
     }
     </script>
@@ -149,7 +207,7 @@
 
     <!-- HERO -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline preload="metadata" poster="assets/img/hero-poster.jpg">
+        <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline preload="metadata" poster="assets/img/hero-poster.jpg" aria-hidden="true">
             <source src="assets/video/hero-main.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-dark-1 bg-opacity-60"></div>

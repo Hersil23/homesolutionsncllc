@@ -10,7 +10,23 @@
     <meta name="description" content="Request a free, no-obligation cleaning estimate from Home Solutions NC. Serving Raleigh, Wake County, and surrounding NC communities. Call (919) 917-4604.">
     <meta name="robots" content="index, follow">
 
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Contact Us | Home Solutions NC - Get Your Free Estimate">
+    <meta property="og:description" content="Request a free, no-obligation cleaning estimate from Home Solutions NC. Serving Raleigh and Wake County, NC. Call (919) 917-4604.">
+    <meta property="og:image" content="https://www.homesolutionsnc.com/assets/img/og-image.jpg">
+    <meta property="og:url" content="https://www.homesolutionsnc.com/contact.html">
+    <meta property="og:site_name" content="Home Solutions NC">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Us | Home Solutions NC">
+    <meta name="twitter:description" content="Get a free cleaning estimate. Serving Raleigh and Wake County, NC. Call (919) 917-4604.">
+    <meta name="twitter:image" content="https://www.homesolutionsnc.com/assets/img/og-image.jpg">
+
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="canonical" href="https://www.homesolutionsnc.com/contact.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,6 +58,28 @@
     </script>
 
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Schema.org ContactPage Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "mainEntity": {
+            "@type": "HouseCleaningService",
+            "name": "Home Solutions NC LLC",
+            "url": "https://www.homesolutionsnc.com",
+            "telephone": "+1-919-917-4604",
+            "email": "info@homesolutionsnc.com",
+            "openingHours": "Mo-Sa 08:00-18:00",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Raleigh",
+                "addressRegion": "NC",
+                "addressCountry": "US"
+            }
+        }
+    }
+    </script>
 </head>
 
 <body class="font-body text-almost-black bg-white overflow-x-hidden">
@@ -114,12 +152,12 @@
                                 <!-- Full Name -->
                                 <div>
                                     <label for="contact-name" class="block text-sm font-semibold text-almost-black mb-2">Full Name <span class="text-red-500">*</span></label>
-                                    <input type="text" id="contact-name" name="name" required placeholder="Your full name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-sm">
+                                    <input type="text" id="contact-name" name="name" required placeholder="Your full name" autocomplete="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-sm">
                                 </div>
                                 <!-- Email -->
                                 <div>
                                     <label for="contact-email" class="block text-sm font-semibold text-almost-black mb-2">Email Address <span class="text-red-500">*</span></label>
-                                    <input type="email" id="contact-email" name="email" required placeholder="your@email.com" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-sm">
+                                    <input type="email" id="contact-email" name="email" required placeholder="your@email.com" autocomplete="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-sm">
                                 </div>
                             </div>
 
@@ -138,7 +176,7 @@
                                 <!-- Phone -->
                                 <div>
                                     <label for="contact-phone" class="block text-sm font-semibold text-almost-black mb-2">Phone <span class="text-gray-medium text-xs font-normal">(Recommended)</span></label>
-                                    <input type="tel" id="contact-phone" name="phone" placeholder="(000) 000-0000" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-sm">
+                                    <input type="tel" id="contact-phone" name="phone" placeholder="(000) 000-0000" autocomplete="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-blue focus:ring-2 focus:ring-primary-blue/20 outline-none transition-all duration-300 text-sm">
                                     <p class="text-gray-medium text-xs mt-1.5">Phone helps us provide faster quotes.</p>
                                 </div>
                             </div>
