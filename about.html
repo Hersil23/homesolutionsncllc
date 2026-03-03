@@ -35,6 +35,7 @@
     <!-- Critical CSS: prevent FOUC before Tailwind CDN processes -->
     <style>
         .hidden { display: none; }
+        html { overflow-x: hidden; max-width: 100%; }
         body { background-color: #303643; }
         #navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 50; }
         #navbar img { max-height: 32px; width: auto; }
