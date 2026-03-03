@@ -459,31 +459,43 @@
                 <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
                     <span class="inline-block text-primary-blue font-semibold text-sm tracking-widest uppercase mb-4">Our Results</span>
                     <h2 class="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-almost-black mb-4 sm:mb-6">See the Difference We Make</h2>
-                    <p class="text-gray-medium text-base sm:text-lg leading-relaxed">Real results from real homes in Wake County. See how our professional cleaning transforms spaces.</p>
+                    <p class="text-gray-medium text-base sm:text-lg leading-relaxed">Real results from real homes in Wake County. Drag the slider to compare.</p>
                 </div>
 
-                <div class="space-y-10 lg:space-y-14">
-                    <!-- Pair 1: Kitchen -->
-                    <div class="animate-on-scroll grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
-                        <div class="relative rounded-2xl overflow-hidden shadow-lg">
-                            <img src="assets/img/gallery-before-1.jpg" alt="Kitchen before professional cleaning" class="w-full h-64 sm:h-72 lg:h-80 object-cover" width="600" height="400" loading="lazy">
-                            <span class="absolute top-3 left-3 bg-dark-1/80 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Before</span>
-                        </div>
-                        <div class="relative rounded-2xl overflow-hidden shadow-lg">
-                            <img src="assets/img/gallery-after-1.jpg" alt="Kitchen after professional cleaning" class="w-full h-64 sm:h-72 lg:h-80 object-cover" width="600" height="400" loading="lazy">
-                            <span class="absolute top-3 left-3 bg-copper/90 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">After</span>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                    <!-- Slider 1: Kitchen -->
+                    <div class="gallery-item opacity-0">
+                        <h3 class="font-heading text-xl font-bold text-almost-black mb-4 text-center">Kitchen Transformation</h3>
+                        <div class="before-after-slider relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-lg cursor-ew-resize select-none" data-slider="1">
+                            <img src="assets/img/gallery-after-1.jpg" alt="Clean kitchen after professional cleaning" class="absolute inset-0 w-full h-full object-cover" width="800" height="600" loading="lazy">
+                            <div class="before-image-wrapper absolute inset-0 overflow-hidden" style="width: 50%;">
+                                <img src="assets/img/gallery-before-1.jpg" alt="Kitchen before professional cleaning" class="absolute inset-0 w-full h-full object-cover" style="min-width: 200%; width: auto; max-width: none;" width="800" height="600" loading="lazy">
+                            </div>
+                            <span class="absolute top-4 left-4 bg-dark-1/80 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider pointer-events-none">Before</span>
+                            <span class="absolute top-4 right-4 bg-copper/90 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider pointer-events-none">After</span>
+                            <div class="slider-handle absolute top-0 bottom-0 w-1 bg-white shadow-lg cursor-ew-resize" style="left: 50%;">
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-xl flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-dark-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Pair 2: Bathroom -->
-                    <div class="animate-on-scroll grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
-                        <div class="relative rounded-2xl overflow-hidden shadow-lg">
-                            <img src="assets/img/gallery-before-2.jpg" alt="Bathroom before professional cleaning" class="w-full h-64 sm:h-72 lg:h-80 object-cover" width="600" height="400" loading="lazy">
-                            <span class="absolute top-3 left-3 bg-dark-1/80 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Before</span>
-                        </div>
-                        <div class="relative rounded-2xl overflow-hidden shadow-lg">
-                            <img src="assets/img/gallery-after-2.jpg" alt="Bathroom after professional cleaning" class="w-full h-64 sm:h-72 lg:h-80 object-cover" width="600" height="400" loading="lazy">
-                            <span class="absolute top-3 left-3 bg-copper/90 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">After</span>
+                    <!-- Slider 2: Bathroom -->
+                    <div class="gallery-item opacity-0">
+                        <h3 class="font-heading text-xl font-bold text-almost-black mb-4 text-center">Bathroom Transformation</h3>
+                        <div class="before-after-slider relative w-full aspect-[4/3] overflow-hidden rounded-2xl shadow-lg cursor-ew-resize select-none" data-slider="2">
+                            <img src="assets/img/gallery-after-2.jpg" alt="Clean bathroom after professional cleaning" class="absolute inset-0 w-full h-full object-cover" width="800" height="600" loading="lazy">
+                            <div class="before-image-wrapper absolute inset-0 overflow-hidden" style="width: 50%;">
+                                <img src="assets/img/gallery-before-2.jpg" alt="Bathroom before professional cleaning" class="absolute inset-0 w-full h-full object-cover" style="min-width: 200%; width: auto; max-width: none;" width="800" height="600" loading="lazy">
+                            </div>
+                            <span class="absolute top-4 left-4 bg-dark-1/80 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider pointer-events-none">Before</span>
+                            <span class="absolute top-4 right-4 bg-copper/90 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider pointer-events-none">After</span>
+                            <div class="slider-handle absolute top-0 bottom-0 w-1 bg-white shadow-lg cursor-ew-resize" style="left: 50%;">
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-xl flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-dark-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initActiveNavHighlight();
     initFAQAccordion();
     initContactForm();
+    initBeforeAfterSliders();
     initWhatsAppButton();
     initHashNavigation();
 
@@ -472,6 +473,7 @@ function initGSAPAnimations() {
     initAboutAnimation();
     initServiceAreaAnimation();
     initFAQsAnimation();
+    initGalleryAnimation();
     initTestimonialsAnimation();
     initSubPageAnimations();
 }
@@ -669,7 +671,148 @@ function initSubPageAnimations() {
 
 
 /* ============================================== */
-/* 11. WHATSAPP BUTTON - Floating button setup    */
+/* 11. BEFORE/AFTER SLIDERS - Drag functionality  */
+/* ============================================== */
+
+/**
+ * Initializes interactive before/after comparison sliders.
+ * Supports mouse drag, touch drag, and keyboard navigation.
+ * The slider reveals the "before" image by dragging a handle left/right
+ * over the "after" image.
+ */
+function initBeforeAfterSliders() {
+    const sliders = document.querySelectorAll('.before-after-slider');
+
+    sliders.forEach(slider => {
+        const beforeWrapper = slider.querySelector('.before-image-wrapper');
+        const handle = slider.querySelector('.slider-handle');
+
+        if (!beforeWrapper || !handle) return;
+
+        let isDragging = false;
+
+        /**
+         * Converts a clientX position to a percentage within the slider bounds.
+         * @param {number} clientX - The horizontal cursor/touch position
+         * @returns {number} Percentage (0-100) of slider width
+         */
+        function getSliderPosition(clientX) {
+            const rect = slider.getBoundingClientRect();
+            let x = clientX - rect.left;
+            x = Math.max(0, Math.min(x, rect.width));
+            return (x / rect.width) * 100;
+        }
+
+        /**
+         * Updates the slider visual position.
+         * @param {number} percentage - Position as percentage (0-100)
+         */
+        function updateSlider(percentage) {
+            beforeWrapper.style.width = percentage + '%';
+            handle.style.left = percentage + '%';
+        }
+
+        // Mouse events
+        slider.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            isDragging = true;
+            slider.classList.add('active');
+            updateSlider(getSliderPosition(e.clientX));
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            updateSlider(getSliderPosition(e.clientX));
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                slider.classList.remove('active');
+            }
+        });
+
+        // Touch events
+        slider.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            slider.classList.add('active');
+            updateSlider(getSliderPosition(e.touches[0].clientX));
+        }, { passive: true });
+
+        slider.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            updateSlider(getSliderPosition(e.touches[0].clientX));
+        }, { passive: true });
+
+        slider.addEventListener('touchend', () => {
+            isDragging = false;
+            slider.classList.remove('active');
+        });
+
+        // Keyboard accessibility
+        const handleCircle = handle.querySelector('div');
+        if (handleCircle) {
+            handleCircle.setAttribute('tabindex', '0');
+            handleCircle.setAttribute('role', 'slider');
+            handleCircle.setAttribute('aria-label', 'Before and after comparison slider');
+            handleCircle.setAttribute('aria-valuemin', '0');
+            handleCircle.setAttribute('aria-valuemax', '100');
+            handleCircle.setAttribute('aria-valuenow', '50');
+
+            handleCircle.addEventListener('keydown', (e) => {
+                const currentLeft = parseFloat(handle.style.left) || 50;
+                let newPosition = currentLeft;
+                const step = 2;
+
+                if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    newPosition = Math.max(0, currentLeft - step);
+                } else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    newPosition = Math.min(100, currentLeft + step);
+                }
+
+                updateSlider(newPosition);
+                handleCircle.setAttribute('aria-valuenow', Math.round(newPosition));
+            });
+        }
+    });
+}
+
+
+/* ============================================== */
+/* 12. GALLERY ANIMATION - Scroll reveal          */
+/* ============================================== */
+
+/**
+ * Gallery items scroll animation.
+ * Before/after slider containers stagger into view when the
+ * #before-after section enters the viewport.
+ */
+function initGalleryAnimation() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    if (galleryItems.length === 0) return;
+
+    gsap.set(galleryItems, { y: 40 });
+
+    gsap.to(galleryItems, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.3,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: '#before-after',
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+        }
+    });
+}
+
+
+/* ============================================== */
+/* 13. WHATSAPP BUTTON - Floating button setup    */
 /* ============================================== */
 
 /**
