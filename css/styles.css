@@ -742,7 +742,7 @@ html::-webkit-scrollbar {
 /* --- Tablet horizontal (768px+) --- */
 @media (min-width: 768px) {
     .service-section {
-        height: 80vh;
+        min-height: 80vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
         padding-top: 5rem; /* Offset for fixed navbar (80px) */
@@ -793,7 +793,7 @@ html::-webkit-scrollbar {
 /* --- Desktop (1024px+) --- */
 @media (min-width: 1024px) {
     .service-section {
-        height: 100vh;
+        min-height: 100vh;
         padding-top: 5rem; /* Offset for fixed navbar (80px) */
     }
 
