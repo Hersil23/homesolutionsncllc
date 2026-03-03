@@ -645,7 +645,7 @@ html::-webkit-scrollbar {
 }
 
 .about-hero img {
-    object-position: center 25%;
+    object-position: center 20%;
 }
 
 @media (min-width: 480px) {
