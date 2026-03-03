@@ -77,6 +77,8 @@ main {
     background-color: rgba(48, 54, 67, 0.6);
     border-radius: 8px;
     padding: 6px;
+    min-width: 40px;
+    min-height: 40px;
 }
 
 /* Navbar solid state (after scroll) */
