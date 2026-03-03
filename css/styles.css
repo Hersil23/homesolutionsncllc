@@ -648,31 +648,108 @@ html::-webkit-scrollbar {
 
 
 /* ============================================== */
-/* 16. SERVICES PAGE - DESKTOP FULL-HEIGHT LAYOUT */
+/* 16. SERVICES PAGE - SERVICE SECTIONS LAYOUT    */
 /* ============================================== */
 
-@media (min-width: 1024px) {
+/* --- Base / Mobile small (< 375px) --- */
+.service-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-section .service-img {
+    order: -1;
+    overflow: hidden;
+}
+
+.service-section .service-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+.service-section .service-text {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.service-section .service-text h2 {
+    font-size: 1.375rem;
+}
+
+.service-section .service-text ul {
+    text-align: left;
+}
+
+.service-section .service-text li span {
+    font-size: 0.875rem;
+}
+
+.service-section .service-text .service-cta {
+    display: inline-flex;
+    align-items: center;
+    max-width: 90%;
+}
+
+/* Recurring image: show heads */
+.service-section .service-img img.img-top {
+    object-position: center top;
+}
+
+/* --- Mobile standard (375px+) --- */
+@media (min-width: 375px) {
+    .service-section .service-img img {
+        height: 250px;
+    }
+
+    .service-section .service-text {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* --- Mobile large (480px+) --- */
+@media (min-width: 480px) {
+    .service-section .service-text h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* --- Tablet vertical (600px+) --- */
+@media (min-width: 600px) {
+    .service-section .service-img img {
+        height: 350px;
+    }
+
+    .service-section .service-text {
+        padding: 2.5rem 2rem;
+    }
+
+    .service-section .service-text h2 {
+        font-size: 1.75rem;
+    }
+
+    .service-section .service-text li span {
+        font-size: 1rem;
+    }
+
+    .service-section .service-text .service-cta {
+        max-width: none;
+    }
+}
+
+/* --- Tablet horizontal / Desktop (768px+) --- */
+@media (min-width: 768px) {
     .service-section {
         min-height: 100vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
-    .service-section .service-text {
-        display: flex;
-        align-items: center;
-        padding: 3rem 4rem;
-    }
-
-    .service-section .service-text > div {
-        max-width: 36rem;
-    }
-
     .service-section .service-img {
         position: relative;
-        overflow: hidden;
-        padding: 0;
-        margin: 0;
+        order: unset;
     }
 
     .service-section .service-img img {
@@ -680,23 +757,59 @@ html::-webkit-scrollbar {
         inset: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
         border-radius: 0;
         box-shadow: none;
     }
 
-    /* Text left, image right */
+    .service-section .service-text {
+        display: flex;
+        align-items: center;
+        padding: 2.5rem 2.5rem;
+        text-align: left;
+    }
+
+    .service-section .service-text > div {
+        max-width: 36rem;
+    }
+
+    .service-section .service-text h2 {
+        font-size: 1.875rem;
+    }
+
+    .service-section .service-text li span {
+        font-size: 0.9375rem;
+    }
+
+    /* Alternating order */
     .service-section.img-right .service-text { order: 1; }
     .service-section.img-right .service-img { order: 2; }
-
-    /* Image left, text right */
     .service-section.img-left .service-text { order: 2; }
     .service-section.img-left .service-img { order: 1; }
 }
 
+/* --- Desktop (1024px+) --- */
+@media (min-width: 1024px) {
+    .service-section .service-text {
+        padding: 3rem 4rem;
+    }
+
+    .service-section .service-text h2 {
+        font-size: 2.25rem;
+    }
+
+    .service-section .service-text li span {
+        font-size: 1rem;
+    }
+}
+
+/* --- Desktop large (1280px+) --- */
 @media (min-width: 1280px) {
     .service-section .service-text {
         padding: 3rem 6rem;
+    }
+
+    .service-section .service-text h2 {
+        font-size: 2.625rem;
     }
 }
 
