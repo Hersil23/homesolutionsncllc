@@ -81,18 +81,6 @@ main {
 /* Active nav link indicator */
 .nav-link.active {
     color: #c27647;
-    position: relative;
-}
-
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: #c27647;
-    border-radius: 1px;
 }
 
 /* Mobile menu transition */
