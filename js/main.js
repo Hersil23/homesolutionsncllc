@@ -71,6 +71,15 @@ function initNavbar() {
     const navbar = document.getElementById('navbar');
     if (!navbar) return;
 
+    // Force repaint on small mobile to fix hamburger visibility bug.
+    // Some mobile browsers skip painting the hamburger on the first frame
+    // due to GPU compositing; toggling a property forces a repaint.
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    if (menuBtn && window.innerWidth <= 480) {
+        menuBtn.style.opacity = '0.99';
+        requestAnimationFrame(() => { menuBtn.style.opacity = ''; });
+    }
+
     const hero = document.querySelector('#hero, .services-hero, .about-hero, .contact-hero');
     const scrollThreshold = 80;
 
