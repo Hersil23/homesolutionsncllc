@@ -72,9 +72,11 @@ main {
     transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, backdrop-filter 0.5s ease-in-out;
 }
 
-/* Hamburger icon always visible with drop shadow */
+/* Hamburger button: visible background so it never disappears */
 #mobile-menu-btn {
-    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.8));
+    background-color: rgba(48, 54, 67, 0.6);
+    border-radius: 8px;
+    padding: 6px;
 }
 
 /* Navbar solid state (after scroll) */
@@ -82,6 +84,15 @@ main {
     background-color: #303643;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(10px);
+}
+
+/* On mobile, keep navbar transparent even when scrolled */
+@media (max-width: 1023px) {
+    #navbar.scrolled {
+        background-color: transparent;
+        box-shadow: none;
+        backdrop-filter: none;
+    }
 }
 
 /* Active nav link indicator */
