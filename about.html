@@ -141,30 +141,39 @@
     </header>
 
     <!-- PAGE HERO -->
-    <section class="page-hero bg-dark-1 text-white text-center pt-32 pb-16 sm:pt-36 sm:pb-20">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="font-heading text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6" style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);">About Home Solutions NC</h1>
-            <p class="text-gray-200 text-base sm:text-xl leading-relaxed max-w-2xl mx-auto">Your trusted, family-owned cleaning company in Wake County.</p>
+    <section class="about-hero relative flex items-center justify-center overflow-hidden">
+        <img src="assets/img/about-team.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" aria-hidden="true">
+        <div class="absolute inset-0 bg-dark-1" style="opacity: 0.65;"></div>
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto pt-32 pb-16 sm:pt-36 sm:pb-20">
+            <h1 class="font-heading text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6" style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);">About Home Solutions NC</h1>
+            <p class="text-white text-base sm:text-xl leading-relaxed max-w-2xl mx-auto mb-8">Your trusted, family-owned cleaning company in Wake County.</p>
+            <a href="contact.html" class="bg-copper hover:bg-opacity-90 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105 w-full sm:w-auto inline-block">Get a Free Estimate</a>
         </div>
     </section>
 
     <main>
         <!-- OUR STORY -->
         <section class="py-14 sm:py-20 lg:py-28 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="animate-on-scroll grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                    <div class="order-2 lg:order-1">
-                        <h2 class="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-almost-black mb-6 leading-tight">More Than Just a Cleaning Service &ndash; We're Your Neighbors</h2>
-                        <p class="text-gray-medium text-base sm:text-lg leading-relaxed mb-6">Founded right here in Wake County, Home Solutions NC is a proud family-owned and operated cleaning company. We built our business on a simple promise: to treat your home with the same care, respect, and attention to detail as our own.</p>
-                        <p class="text-gray-medium text-base sm:text-lg leading-relaxed">We understand that inviting someone into your personal space requires trust. That's why every member of our team is vetted, trained, and committed to our high standards. When you choose us, you're not just hiring a cleaning crew; you're supporting a local family that genuinely cares about our community.</p>
+            <div class="mx-auto px-4 sm:px-6 lg:px-8 text-center" style="max-width: 800px;">
+                <div class="animate-on-scroll">
+                    <h2 class="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-almost-black mb-6 leading-tight">More Than Just a Cleaning Service &ndash; We're Your Neighbors</h2>
+                    <p class="text-gray-medium text-base sm:text-lg leading-relaxed mb-6">Founded right here in Wake County, Home Solutions NC is a proud family-owned and operated cleaning company. We built our business on a simple promise: to treat your home with the same care, respect, and attention to detail as our own.</p>
+                    <p class="text-gray-medium text-base sm:text-lg leading-relaxed mb-10">We understand that inviting someone into your personal space requires trust. That's why every member of our team is vetted, trained, and committed to our high standards. When you choose us, you're not just hiring a cleaning crew; you're supporting a local family that genuinely cares about our community.</p>
+                    <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10">
+                        <span class="inline-flex items-center bg-off-white rounded-full px-4 py-2.5 sm:px-5 text-sm font-medium text-almost-black">
+                            <svg class="w-5 h-5 text-primary-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            Locally Owned &amp; Family Operated
+                        </span>
+                        <span class="inline-flex items-center bg-off-white rounded-full px-4 py-2.5 sm:px-5 text-sm font-medium text-almost-black">
+                            <svg class="w-5 h-5 text-primary-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            Fully Licensed &amp; Insured
+                        </span>
+                        <span class="inline-flex items-center bg-off-white rounded-full px-4 py-2.5 sm:px-5 text-sm font-medium text-almost-black">
+                            <svg class="w-5 h-5 text-copper mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                            100% Satisfaction Guarantee
+                        </span>
                     </div>
-                    <div class="order-1 lg:order-2">
-                        <div class="relative">
-                            <img src="assets/img/about-team.jpg" alt="Home Solutions NC team" class="w-full h-auto rounded-2xl shadow-xl object-cover" width="800" height="600" loading="lazy">
-                            <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-copper/20 rounded-2xl -z-10 hidden sm:block"></div>
-                            <div class="absolute -top-4 -left-4 w-20 h-20 bg-primary-blue/20 rounded-2xl -z-10 hidden sm:block"></div>
-                        </div>
-                    </div>
+                    <a href="contact.html" class="inline-flex items-center bg-copper hover:bg-opacity-90 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105">Get My Free Estimate<svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
                 </div>
             </div>
         </section>
