@@ -369,22 +369,29 @@ function initFAQAccordion() {
 /* ============================================== */
 
 /**
- * Initializes the contact form with validation and WhatsApp submission.
+ * Initializes the contact form with dual submission: FormSubmit.co (email) + WhatsApp.
  * Flow:
  * 1. Validates required fields (name, email, service) with visual feedback
- * 2. Builds a formatted message from form data
- * 3. Opens WhatsApp Web/App with the pre-filled message
- * 4. Shows a success confirmation on the submit button for 3 seconds
+ * 2. Opens WhatsApp with pre-filled message in a new tab
+ * 3. Lets the form submit natively to FormSubmit.co (email delivery)
+ * 4. FormSubmit.co redirects to ?sent=true showing a confirmation banner
  *
- * Also clears validation errors on user input/change events.
+ * Also detects ?sent=true on page load to show confirmation message.
  */
 function initContactForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    // Show confirmation banner if redirected from FormSubmit.co
+    if (window.location.search.includes('sent=true')) {
+        const banner = document.getElementById('sent-confirmation');
+        if (banner) {
+            banner.classList.remove('hidden');
+            banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
 
+    form.addEventListener('submit', (e) => {
         const name = form.querySelector('#contact-name').value.trim();
         const email = form.querySelector('#contact-email').value.trim();
         const service = form.querySelector('#contact-service').value;
@@ -411,8 +418,12 @@ function initContactForm() {
             }
         });
 
-        if (!isValid) return;
+        if (!isValid) {
+            e.preventDefault();
+            return;
+        }
 
+        // Build WhatsApp message
         let msg = `New Estimate Request\n`;
         msg += `---\n`;
         msg += `Name: ${name}\n`;
@@ -429,16 +440,7 @@ function initContactForm() {
         const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(msg)}`;
         window.open(waUrl, '_blank');
 
-        const btn = form.querySelector('button[type="submit"]');
-        if (btn) {
-            const originalText = btn.innerHTML;
-            btn.innerHTML = 'Sent! Check WhatsApp';
-            btn.classList.add('bg-green-600');
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.classList.remove('bg-green-600');
-            }, 3000);
-        }
+        // Form continues submitting natively to FormSubmit.co (no preventDefault)
     });
 
     const inputs = form.querySelectorAll('input, select, textarea');
