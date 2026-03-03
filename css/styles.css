@@ -745,7 +745,6 @@ html::-webkit-scrollbar {
         min-height: 80vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        padding-top: 5rem; /* Offset for fixed navbar (80px) */
     }
 
     .service-section .service-img {
@@ -767,7 +766,7 @@ html::-webkit-scrollbar {
     .service-section .service-text {
         display: flex;
         align-items: center;
-        padding: 2.5rem;
+        padding: 5rem 2.5rem 2.5rem; /* top padding clears fixed navbar */
         text-align: left;
     }
 
@@ -794,7 +793,6 @@ html::-webkit-scrollbar {
 @media (min-width: 1024px) {
     .service-section {
         min-height: 100vh;
-        padding-top: 5rem; /* Offset for fixed navbar (80px) */
     }
 
     .service-section .service-img img {
@@ -802,7 +800,7 @@ html::-webkit-scrollbar {
     }
 
     .service-section .service-text {
-        padding: 3rem 4rem;
+        padding: 5rem 4rem 3rem; /* top padding clears fixed navbar */
     }
 
     .service-section .service-text h2 {
