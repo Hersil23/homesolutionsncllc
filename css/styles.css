@@ -659,14 +659,14 @@ html::-webkit-scrollbar {
 
 .service-section .service-img {
     order: -1;
-    overflow: hidden;
+    background-color: #f5f5f5;
 }
 
 .service-section .service-img img {
     width: 100%;
-    height: 320px;
-    object-fit: cover;
-    object-position: top center;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
     display: block;
 }
 
@@ -696,7 +696,7 @@ html::-webkit-scrollbar {
 /* --- Mobile standard (375px+) --- */
 @media (min-width: 375px) {
     .service-section .service-img img {
-        height: 380px;
+        max-height: 400px;
     }
 
     .service-section .service-text {
@@ -707,7 +707,7 @@ html::-webkit-scrollbar {
 /* --- Mobile large (480px+) --- */
 @media (min-width: 480px) {
     .service-section .service-img img {
-        height: 400px;
+        max-height: 450px;
     }
 
     .service-section .service-text h2 {
@@ -718,7 +718,7 @@ html::-webkit-scrollbar {
 /* --- Tablet vertical (600px+) --- */
 @media (min-width: 600px) {
     .service-section .service-img img {
-        height: 450px;
+        max-height: 500px;
     }
 
     .service-section .service-text {
@@ -738,32 +738,33 @@ html::-webkit-scrollbar {
     }
 }
 
-/* --- Tablet horizontal / Desktop (768px+) --- */
+/* --- Tablet horizontal (768px+) --- */
 @media (min-width: 768px) {
     .service-section {
-        min-height: 100vh;
+        min-height: 80vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        align-items: stretch;
     }
 
     .service-section .service-img {
-        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         order: unset;
     }
 
     .service-section .service-img img {
-        position: absolute;
-        inset: 0;
         width: 100%;
         height: 100%;
-        border-radius: 0;
-        box-shadow: none;
+        max-height: none;
+        object-fit: contain;
     }
 
     .service-section .service-text {
         display: flex;
         align-items: center;
-        padding: 2.5rem 2.5rem;
+        padding: 2.5rem;
         text-align: left;
     }
 
@@ -788,6 +789,10 @@ html::-webkit-scrollbar {
 
 /* --- Desktop (1024px+) --- */
 @media (min-width: 1024px) {
+    .service-section {
+        min-height: 100vh;
+    }
+
     .service-section .service-text {
         padding: 3rem 4rem;
     }
