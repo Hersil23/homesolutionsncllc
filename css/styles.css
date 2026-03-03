@@ -745,6 +745,7 @@ html::-webkit-scrollbar {
         height: 80vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        padding-top: 5rem; /* Offset for fixed navbar (80px) */
     }
 
     .service-section .service-img {
@@ -793,6 +794,7 @@ html::-webkit-scrollbar {
 @media (min-width: 1024px) {
     .service-section {
         height: 100vh;
+        padding-top: 5rem; /* Offset for fixed navbar (80px) */
     }
 
     .service-section .service-img img {
