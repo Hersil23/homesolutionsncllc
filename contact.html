@@ -36,15 +36,15 @@
     <style>
         .hidden { display: none; }
         #navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 50; }
-        #mobile-menu-btn { color: #fff; flex-shrink: 0; }
-        #mobile-menu-btn svg { width: 1.75rem; height: 1.75rem; }
         #navbar img { max-height: 32px; width: auto; }
         #navbar nav > div:first-child { display: flex; align-items: center; justify-content: space-between; height: 5rem; }
+        #mobile-menu-btn { color: #fff; flex-shrink: 0; transform: translateZ(0); }
+        #mobile-menu-btn svg { width: 1.75rem; height: 1.75rem; }
         @media (max-width: 1023px) {
-            #mobile-menu-btn { display: inline-flex; }
+            #mobile-menu-btn { display: inline-flex !important; }
         }
         @media (min-width: 1024px) {
-            #mobile-menu-btn { display: none; }
+            #mobile-menu-btn { display: none !important; }
         }
     </style>
 
