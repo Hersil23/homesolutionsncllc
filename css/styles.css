@@ -753,14 +753,14 @@ html::-webkit-scrollbar {
         justify-content: center;
         overflow: hidden;
         order: unset;
-        padding: 1.5rem 0.5rem;
+        padding: 0.75rem 0.25rem;
     }
 
     .service-section .service-img img {
         width: auto;
         height: auto;
         max-width: 100%;
-        max-height: calc(80vh - 3rem);
+        max-height: calc(80vh - 1.5rem);
         object-fit: contain;
     }
 
@@ -797,7 +797,7 @@ html::-webkit-scrollbar {
     }
 
     .service-section .service-img img {
-        max-height: calc(100vh - 4rem);
+        max-height: calc(100vh - 2rem);
     }
 
     .service-section .service-text {
