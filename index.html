@@ -43,10 +43,12 @@
     <!-- Critical CSS: prevent FOUC before Tailwind CDN processes -->
     <style>
         .hidden { display: none; }
+        body { background-color: #303643; }
         #navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 50; }
         #navbar img { max-height: 32px; width: auto; }
         #navbar nav > div:first-child { display: flex; align-items: center; justify-content: space-between; height: 5rem; }
-        #mobile-menu-btn { color: #fff; flex-shrink: 0; transform: translateZ(0); }
+        #hero, .services-hero, .about-hero, .contact-hero { background-color: #303643; }
+        #mobile-menu-btn { color: #fff; flex-shrink: 0; background-color: rgba(48, 54, 67, 0.6); border-radius: 8px; padding: 6px; }
         #mobile-menu-btn svg { width: 1.75rem; height: 1.75rem; }
         @media (max-width: 1023px) {
             #mobile-menu-btn { display: inline-flex !important; }
