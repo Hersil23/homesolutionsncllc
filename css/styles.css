@@ -559,7 +559,49 @@ html::-webkit-scrollbar {
 
 
 /* ============================================== */
-/* 14. RESPONSIVE ADJUSTMENTS                     */
+/* 14. FAQ ACCORDION                              */
+/* ============================================== */
+
+.faq-item .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 500px;
+}
+
+.faq-item .faq-toggle svg {
+    transition: transform 0.3s ease;
+}
+
+.faq-item.open .faq-toggle svg {
+    transform: rotate(45deg);
+}
+
+
+/* ============================================== */
+/* 15. SUB-PAGE HERO                              */
+/* ============================================== */
+
+.page-hero {
+    background-color: #303643;
+    padding-top: 7rem;
+}
+
+/* Sub-page service detail cards */
+.service-detail-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-detail-card:hover {
+    transform: translateY(-4px);
+}
+
+
+/* ============================================== */
+/* 16. RESPONSIVE ADJUSTMENTS                     */
 /* ============================================== */
 
 /* Extra small screens (below 375px) */

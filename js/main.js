@@ -4,33 +4,22 @@
 /* ============================================== */
 
 /* ============================================== */
-/* 1. BUSINESS DATA - CENTRALIZED PLACEHOLDERS    */
-/* POR CONFIRMAR CON EL CLIENTE:                  */
-/* Update these values once client provides info  */
+/* 1. BUSINESS DATA - CENTRALIZED                 */
 /* ============================================== */
 
 const BUSINESS = {
     name: 'Home Solutions NC LLC',
-    slogan: 'Your Home, Our Priority',
-    phone: '(000) 000-0000',           // POR CONFIRMAR CON EL CLIENTE
-    phoneLink: '+10000000000',          // POR CONFIRMAR CON EL CLIENTE
-    email: 'info@homesolutionsncllc.com', // POR CONFIRMAR CON EL CLIENTE
-    address: 'North Carolina',          // POR CONFIRMAR CON EL CLIENTE
-    city: 'Raleigh, NC',               // POR CONFIRMAR CON EL CLIENTE
-    hours: 'Mon - Sat: 8:00 AM - 6:00 PM', // POR CONFIRMAR CON EL CLIENTE
-    yearFounded: '2020',               // POR CONFIRMAR CON EL CLIENTE
-    homesCleaned: 500,                  // POR CONFIRMAR CON EL CLIENTE
-    yearsExperience: 5,                 // POR CONFIRMAR CON EL CLIENTE
-    serviceAreas: 'Raleigh, Cary, Apex, Durham, Chapel Hill and surrounding areas', // POR CONFIRMAR CON EL CLIENTE
-    socialMedia: {
-        instagram: '#',                 // POR CONFIRMAR CON EL CLIENTE
-        facebook: '#',                  // POR CONFIRMAR CON EL CLIENTE
-        tiktok: '#',                    // POR CONFIRMAR CON EL CLIENTE
-    },
-    googleMapsReviews: '#',             // POR CONFIRMAR CON EL CLIENTE
-    whatsapp: '10000000000',            // POR CONFIRMAR CON EL CLIENTE (number without + or spaces)
-    whatsappMessage: "Hi! I'm interested in your cleaning services.", // Default WhatsApp message
-    domain: 'https://www.homesolutionsncllc.com',       // POR CONFIRMAR CON EL CLIENTE
+    slogan: 'A Cleaner Home Starts Here',
+    phone: '(919) 917-4604',
+    phoneLink: '9199174604',
+    email: 'info@homesolutionsnc.com',
+    address: 'Wake County, NC',
+    city: 'Raleigh, NC',
+    hours: 'Mon - Sat: 8:00 AM - 6:00 PM',
+    serviceAreas: 'Raleigh, Clayton, Garner, Knightdale, Rolesville, Wake Forest, Wendell, and Zebulon',
+    whatsapp: '19199174604',
+    whatsappMessage: "Hi! I'm interested in your cleaning services.",
+    domain: 'https://www.homesolutionsnc.com',
 };
 
 
@@ -39,119 +28,38 @@ const BUSINESS = {
 /* ============================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    populateBusinessData();
     initNavbar();
     initMobileMenu();
     initSmoothScroll();
     initActiveNavHighlight();
-    initGSAPAnimations();
-    initBeforeAfterSliders();
+    initFAQAccordion();
+    initContactForm();
     initWhatsAppButton();
-    initWhatsAppForm();
+    initHashNavigation();
+
+    // Only init GSAP if available
+    if (typeof gsap !== 'undefined') {
+        initGSAPAnimations();
+    }
 });
 
 
 /* ============================================== */
-/* 3. POPULATE BUSINESS DATA                      */
-/* Fills all placeholder elements with data       */
-/* from the BUSINESS object                       */
-/* ============================================== */
-
-function populateBusinessData() {
-    // Update all phone number displays
-    const phoneElements = document.querySelectorAll('.phone-number');
-    phoneElements.forEach(el => {
-        el.textContent = BUSINESS.phone;
-    });
-
-    // Update all phone links
-    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
-    phoneLinks.forEach(el => {
-        el.setAttribute('href', `tel:${BUSINESS.phoneLink}`);
-    });
-
-    // Update all email displays
-    const emailElements = document.querySelectorAll('.contact-email');
-    emailElements.forEach(el => {
-        el.textContent = BUSINESS.email;
-    });
-
-    // Update all email links
-    const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
-    emailLinks.forEach(el => {
-        el.setAttribute('href', `mailto:${BUSINESS.email}`);
-    });
-
-    // Update operating hours
-    const hoursElements = document.querySelectorAll('.operating-hours');
-    hoursElements.forEach(el => {
-        el.textContent = BUSINESS.hours;
-    });
-
-    // Update service areas
-    const areaElements = document.querySelectorAll('.service-areas');
-    areaElements.forEach(el => {
-        el.textContent = BUSINESS.serviceAreas;
-    });
-
-    // Update counter targets from business data
-    const counters = document.querySelectorAll('.counter');
-    counters.forEach(counter => {
-        const label = counter.closest('div').parentElement.querySelector('p');
-        if (label) {
-            if (label.textContent.includes('Homes Cleaned')) {
-                counter.setAttribute('data-target', BUSINESS.homesCleaned);
-            } else if (label.textContent.includes('Years of Experience')) {
-                counter.setAttribute('data-target', BUSINESS.yearsExperience);
-            }
-        }
-    });
-
-    // Update all WhatsApp links (floating button + CTA buttons)
-    const waMsg = encodeURIComponent(BUSINESS.whatsappMessage);
-    const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${waMsg}`;
-
-    const whatsappBtn = document.getElementById('whatsapp-btn');
-    if (whatsappBtn) {
-        whatsappBtn.setAttribute('href', waUrl);
-    }
-
-    const whatsappCTAs = document.querySelectorAll('.whatsapp-cta');
-    whatsappCTAs.forEach(cta => {
-        cta.setAttribute('href', waUrl);
-    });
-
-    // Update social media links
-    const socialLinks = document.querySelectorAll('footer a[aria-label]');
-    socialLinks.forEach(link => {
-        const label = link.getAttribute('aria-label').toLowerCase();
-        if (label.includes('instagram')) {
-            link.setAttribute('href', BUSINESS.socialMedia.instagram);
-        } else if (label.includes('facebook')) {
-            link.setAttribute('href', BUSINESS.socialMedia.facebook);
-        } else if (label.includes('tiktok')) {
-            link.setAttribute('href', BUSINESS.socialMedia.tiktok);
-        }
-    });
-
-    // Update "See All Reviews" link
-    const reviewLink = document.querySelector('a[href="#"][target="_blank"]');
-    if (reviewLink && reviewLink.textContent.trim().startsWith('See All Reviews')) {
-        reviewLink.setAttribute('href', BUSINESS.googleMapsReviews);
-    }
-}
-
-
-/* ============================================== */
-/* 4. NAVBAR - Scroll effect and state management */
+/* 3. NAVBAR - Scroll effect and state management */
 /* ============================================== */
 
 function initNavbar() {
     const navbar = document.getElementById('navbar');
     if (!navbar) return;
 
-    // Threshold in pixels before navbar changes
+    const hero = document.getElementById('hero');
     const scrollThreshold = 80;
+
+    // Sub-pages (no hero): always show solid navbar
+    if (!hero) {
+        navbar.classList.add('scrolled');
+        return;
+    }
 
     function updateNavbar() {
         if (window.scrollY > scrollThreshold) {
@@ -161,10 +69,8 @@ function initNavbar() {
         }
     }
 
-    // Run on load in case page is already scrolled
     updateNavbar();
 
-    // Optimized scroll listener with requestAnimationFrame
     let ticking = false;
     window.addEventListener('scroll', () => {
         if (!ticking) {
@@ -179,7 +85,7 @@ function initNavbar() {
 
 
 /* ============================================== */
-/* 5. MOBILE MENU - Toggle hamburger menu         */
+/* 4. MOBILE MENU - Toggle hamburger menu         */
 /* ============================================== */
 
 function initMobileMenu() {
@@ -192,13 +98,11 @@ function initMobileMenu() {
 
     let isOpen = false;
 
-    // Toggle menu on button click
     menuBtn.addEventListener('click', () => {
         isOpen = !isOpen;
         toggleMenu(isOpen);
     });
 
-    // Close menu when a nav link is clicked
     const mobileLinks = mobileMenu.querySelectorAll('.mobile-nav-link');
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -207,16 +111,14 @@ function initMobileMenu() {
         });
     });
 
-    // Close menu when CTA button in mobile menu is clicked
-    const mobileCTA = mobileMenu.querySelector('a[href="#contact"]');
-    if (mobileCTA) {
-        mobileCTA.addEventListener('click', () => {
+    const mobileCTAs = mobileMenu.querySelectorAll('a[href="contact.html"], a[href^="tel:"]');
+    mobileCTAs.forEach(cta => {
+        cta.addEventListener('click', () => {
             isOpen = false;
             toggleMenu(false);
         });
-    }
+    });
 
-    // Close menu on escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && isOpen) {
             isOpen = false;
@@ -224,7 +126,6 @@ function initMobileMenu() {
         }
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (isOpen && !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
             isOpen = false;
@@ -235,7 +136,6 @@ function initMobileMenu() {
     function toggleMenu(open) {
         if (open) {
             mobileMenu.classList.remove('hidden');
-            // Force reflow before adding open class for transition
             mobileMenu.offsetHeight;
             mobileMenu.classList.add('open');
             hamburgerIcon.classList.add('hidden');
@@ -248,7 +148,6 @@ function initMobileMenu() {
             closeIcon.classList.add('hidden');
             document.body.classList.remove('menu-open');
             menuBtn.setAttribute('aria-label', 'Open mobile menu');
-            // Wait for transition to finish before hiding
             setTimeout(() => {
                 if (!isOpen) {
                     mobileMenu.classList.add('hidden');
@@ -260,7 +159,7 @@ function initMobileMenu() {
 
 
 /* ============================================== */
-/* 6. SMOOTH SCROLL - Anchor link scrolling       */
+/* 5. SMOOTH SCROLL - Anchor link scrolling       */
 /* ============================================== */
 
 function initSmoothScroll() {
@@ -269,8 +168,6 @@ function initSmoothScroll() {
     links.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
-
-            // Skip if it's just "#"
             if (href === '#') return;
 
             const target = document.querySelector(href);
@@ -278,7 +175,6 @@ function initSmoothScroll() {
 
             e.preventDefault();
 
-            // Calculate offset for fixed navbar
             const navbarHeight = document.getElementById('navbar').offsetHeight;
             const targetPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
 
@@ -292,17 +188,65 @@ function initSmoothScroll() {
 
 
 /* ============================================== */
-/* 7. ACTIVE NAV HIGHLIGHT - Scroll spy           */
+/* 6. HASH NAVIGATION - Handle cross-page hashes  */
+/* ============================================== */
+
+function initHashNavigation() {
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+            setTimeout(() => {
+                const navbar = document.getElementById('navbar');
+                const navbarHeight = navbar ? navbar.offsetHeight : 0;
+                const targetPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            }, 300);
+        }
+    }
+}
+
+
+/* ============================================== */
+/* 7. ACTIVE NAV HIGHLIGHT - Page-based + scroll  */
 /* ============================================== */
 
 function initActiveNavHighlight() {
-    const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-    if (sections.length === 0 || navLinks.length === 0) return;
+    if (navLinks.length === 0) return;
 
-    function highlightNav() {
+    // Determine current page
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.split('/').pop() || 'index.html';
+
+    // Highlight page-based nav links
+    function highlightPageLink(links) {
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            const linkPage = href.split('#')[0];
+
+            if (linkPage === currentPage ||
+                (currentPage === '' && linkPage === 'index.html') ||
+                (currentPage === 'index.html' && linkPage === 'index.html')) {
+                // Only mark Home as active on index, not hash links
+                if (!href.startsWith('#')) {
+                    link.classList.add('active');
+                }
+            } else if (linkPage === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    highlightPageLink(navLinks);
+    highlightPageLink(mobileNavLinks);
+
+    // On index page, also do scroll-based highlighting for #faqs
+    const sections = document.querySelectorAll('section[id]');
+    if (sections.length === 0) return;
+
+    function highlightScrollNav() {
         const scrollPosition = window.scrollY + 150;
 
         sections.forEach(section => {
@@ -311,131 +255,196 @@ function initActiveNavHighlight() {
             const sectionId = section.getAttribute('id');
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                // Update desktop nav links
                 navLinks.forEach(link => {
-                    link.classList.remove('active');
                     if (link.getAttribute('href') === `#${sectionId}`) {
                         link.classList.add('active');
+                    } else if (link.getAttribute('href').startsWith('#')) {
+                        link.classList.remove('active');
                     }
                 });
-
-                // Update mobile nav links
                 mobileNavLinks.forEach(link => {
-                    link.classList.remove('active');
                     if (link.getAttribute('href') === `#${sectionId}`) {
                         link.classList.add('active');
+                    } else if (link.getAttribute('href').startsWith('#')) {
+                        link.classList.remove('active');
                     }
                 });
             }
         });
     }
 
-    // Optimized scroll listener
     let ticking = false;
     window.addEventListener('scroll', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {
-                highlightNav();
+                highlightScrollNav();
                 ticking = false;
             });
             ticking = true;
         }
     }, { passive: true });
 
-    // Initial highlight
-    highlightNav();
+    highlightScrollNav();
 }
 
 
 /* ============================================== */
-/* 8. GSAP ANIMATIONS - All scroll animations     */
+/* 8. FAQ ACCORDION                               */
+/* ============================================== */
+
+function initFAQAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (faqItems.length === 0) return;
+
+    faqItems.forEach(item => {
+        const toggle = item.querySelector('.faq-toggle');
+        if (!toggle) return;
+
+        toggle.addEventListener('click', () => {
+            // Close all other items
+            faqItems.forEach(other => {
+                if (other !== item && other.classList.contains('open')) {
+                    other.classList.remove('open');
+                }
+            });
+            // Toggle current item
+            item.classList.toggle('open');
+        });
+    });
+}
+
+
+/* ============================================== */
+/* 9. CONTACT FORM - Submission handler           */
+/* ============================================== */
+
+function initContactForm() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = form.querySelector('#contact-name').value.trim();
+        const email = form.querySelector('#contact-email').value.trim();
+        const service = form.querySelector('#contact-service').value;
+        const phone = form.querySelector('#contact-phone').value.trim();
+        const message = form.querySelector('#contact-message').value.trim();
+
+        // Validate required fields
+        const required = [
+            { el: form.querySelector('#contact-name'), value: name, label: 'Full Name' },
+            { el: form.querySelector('#contact-email'), value: email, label: 'Email' },
+            { el: form.querySelector('#contact-service'), value: service, label: 'Service' },
+        ];
+
+        let isValid = true;
+
+        required.forEach(field => {
+            if (!field.value) {
+                isValid = false;
+                field.el.classList.add('border-red-500', 'ring-2', 'ring-red-200');
+                if (typeof gsap !== 'undefined') {
+                    gsap.fromTo(field.el, { x: -6 }, { x: 0, duration: 0.4, ease: 'elastic.out(1, 0.3)' });
+                }
+            } else {
+                field.el.classList.remove('border-red-500', 'ring-2', 'ring-red-200');
+            }
+        });
+
+        if (!isValid) return;
+
+        // Build WhatsApp message
+        let msg = `New Estimate Request\n`;
+        msg += `---\n`;
+        msg += `Name: ${name}\n`;
+        msg += `Email: ${email}\n`;
+        msg += `Service: ${service}\n`;
+        if (phone) msg += `Phone: ${phone}\n`;
+        if (message) {
+            msg += `---\n`;
+            msg += `Details:\n${message}\n`;
+        }
+        msg += `---\n`;
+        msg += `Sent from homesolutionsnc.com`;
+
+        const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(msg)}`;
+        window.open(waUrl, '_blank');
+
+        // Show success feedback
+        const btn = form.querySelector('button[type="submit"]');
+        if (btn) {
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Sent! Check WhatsApp';
+            btn.classList.add('bg-green-600');
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.remove('bg-green-600');
+            }, 3000);
+        }
+    });
+
+    // Remove red border on input
+    const inputs = form.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('input', () => {
+            input.classList.remove('border-red-500', 'ring-2', 'ring-red-200');
+        });
+        input.addEventListener('change', () => {
+            input.classList.remove('border-red-500', 'ring-2', 'ring-red-200');
+        });
+    });
+}
+
+
+/* ============================================== */
+/* 10. GSAP ANIMATIONS - All scroll animations    */
 /* ============================================== */
 
 function initGSAPAnimations() {
-    // Register GSAP ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
-    // ----- HERO SECTION ANIMATION -----
-    initHeroAnimation();
+    // Hero animation (index page only)
+    if (document.getElementById('hero')) {
+        initHeroAnimation();
+    }
 
-    // ----- TRUST BAR ANIMATION -----
-    initTrustBarAnimation();
-
-    // ----- SERVICES CARDS ANIMATION -----
+    // Services cards
     initServicesAnimation();
 
-    // ----- HOW IT WORKS ANIMATION -----
-    initHowItWorksAnimation();
-
-    // ----- ABOUT SECTION ANIMATION -----
+    // About section
     initAboutAnimation();
 
-    // ----- GALLERY ANIMATION -----
-    initGalleryAnimation();
+    // Service area
+    initServiceAreaAnimation();
 
-    // ----- TESTIMONIALS ANIMATION -----
+    // FAQs
+    initFAQsAnimation();
+
+    // Testimonials
     initTestimonialsAnimation();
 
-    // ----- CONTACT SECTION ANIMATION -----
-    initContactAnimation();
+    // Sub-page content fade-in
+    initSubPageAnimations();
 }
 
 
 /* Hero Section - Timeline animation on load */
 function initHeroAnimation() {
     const heroTimeline = gsap.timeline({
-        defaults: {
-            ease: 'power3.out',
-            duration: 1
-        }
+        defaults: { ease: 'power3.out', duration: 1 }
+    });
+
+    gsap.set(['#hero-logo', '#hero-title', '#hero-subtitle', '#hero-badge', '#hero-buttons'], {
+        y: 50,
     });
 
     heroTimeline
-        .to('#hero-logo', {
-            opacity: 1,
-            y: 0,
-            duration: 1.2,
-        })
-        .to('#hero-title', {
-            opacity: 1,
-            y: 0,
-        }, '-=0.6')
-        .to('#hero-subtitle', {
-            opacity: 1,
-            y: 0,
-        }, '-=0.6')
-        .to('#hero-buttons', {
-            opacity: 1,
-            y: 0,
-        }, '-=0.5');
-
-    // Set initial states
-    gsap.set(['#hero-logo', '#hero-title', '#hero-subtitle', '#hero-buttons'], {
-        y: 50,
-    });
-}
-
-
-/* Trust Bar - Fade in with stagger */
-function initTrustBarAnimation() {
-    const trustItems = document.querySelectorAll('.trust-item');
-    if (trustItems.length === 0) return;
-
-    gsap.to(trustItems, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power2.out',
-        scrollTrigger: {
-            trigger: '#trust-bar',
-            start: 'top 85%',
-            toggleActions: 'play none none none'
-        }
-    });
-
-    // Set initial state
-    gsap.set(trustItems, { y: 40 });
+        .to('#hero-logo', { opacity: 1, y: 0, duration: 1.2 })
+        .to('#hero-title', { opacity: 1, y: 0 }, '-=0.6')
+        .to('#hero-subtitle', { opacity: 1, y: 0 }, '-=0.6')
+        .to('#hero-badge', { opacity: 1, y: 0 }, '-=0.5')
+        .to('#hero-buttons', { opacity: 1, y: 0 }, '-=0.5');
 }
 
 
@@ -444,11 +453,13 @@ function initServicesAnimation() {
     const serviceCards = document.querySelectorAll('.service-card');
     if (serviceCards.length === 0) return;
 
+    gsap.set(serviceCards, { y: 60 });
+
     gsap.to(serviceCards, {
         opacity: 1,
         y: 0,
         duration: 0.8,
-        stagger: 0.15,
+        stagger: 0.1,
         ease: 'power2.out',
         scrollTrigger: {
             trigger: '#services',
@@ -456,41 +467,16 @@ function initServicesAnimation() {
             toggleActions: 'play none none none'
         }
     });
-
-    // Set initial state
-    gsap.set(serviceCards, { y: 60 });
 }
 
 
-/* How It Works - Steps enter sequentially */
-function initHowItWorksAnimation() {
-    const steps = document.querySelectorAll('.step-item');
-    if (steps.length === 0) return;
-
-    gsap.to(steps, {
-        opacity: 1,
-        y: 0,
-        duration: 0.7,
-        stagger: 0.25,
-        ease: 'power2.out',
-        scrollTrigger: {
-            trigger: '#how-it-works',
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-        }
-    });
-
-    // Set initial state
-    gsap.set(steps, { y: 50 });
-}
-
-
-/* About - Text from left, image from right, counters */
+/* About - Text from left, image from right */
 function initAboutAnimation() {
     const aboutText = document.getElementById('about-text');
     const aboutImage = document.getElementById('about-image');
 
     if (aboutText) {
+        gsap.set(aboutText, { x: -60 });
         gsap.to(aboutText, {
             opacity: 1,
             x: 0,
@@ -502,12 +488,10 @@ function initAboutAnimation() {
                 toggleActions: 'play none none none'
             }
         });
-
-        // Set initial state
-        gsap.set(aboutText, { x: -60 });
     }
 
     if (aboutImage) {
+        gsap.set(aboutImage, { x: 60 });
         gsap.to(aboutImage, {
             opacity: 1,
             x: 0,
@@ -519,74 +503,51 @@ function initAboutAnimation() {
                 toggleActions: 'play none none none'
             }
         });
-
-        // Set initial state
-        gsap.set(aboutImage, { x: 60 });
     }
-
-    // Animated counters
-    initCounterAnimation();
 }
 
 
-/* Counter Animation - Numbers count up when section is visible */
-function initCounterAnimation() {
-    const counters = document.querySelectorAll('.counter');
-    if (counters.length === 0) return;
+/* Service Area - Cities stagger in */
+function initServiceAreaAnimation() {
+    const areaCities = document.querySelectorAll('.area-city');
+    if (areaCities.length === 0) return;
 
-    counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-target'), 10);
+    gsap.set(areaCities, { y: 30 });
 
-        ScrollTrigger.create({
-            trigger: counter,
-            start: 'top 90%',
-            once: true,
-            onEnter: () => {
-                animateCounter(counter, target);
-            }
-        });
-    });
-}
-
-/* Animate a single counter from 0 to target */
-function animateCounter(element, target) {
-    const duration = 2;
-    const obj = { value: 0 };
-
-    gsap.to(obj, {
-        value: target,
-        duration: duration,
-        ease: 'power1.out',
-        onUpdate: () => {
-            element.textContent = Math.round(obj.value);
-        },
-        onComplete: () => {
-            element.textContent = target;
-        }
-    });
-}
-
-
-/* Gallery - Fade in on scroll */
-function initGalleryAnimation() {
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    if (galleryItems.length === 0) return;
-
-    gsap.to(galleryItems, {
+    gsap.to(areaCities, {
         opacity: 1,
         y: 0,
-        duration: 0.8,
-        stagger: 0.3,
+        duration: 0.6,
+        stagger: 0.08,
         ease: 'power2.out',
         scrollTrigger: {
-            trigger: '#gallery',
+            trigger: '#service-area',
             start: 'top 80%',
             toggleActions: 'play none none none'
         }
     });
+}
 
-    // Set initial state
-    gsap.set(galleryItems, { y: 40 });
+
+/* FAQs - Items stagger in */
+function initFAQsAnimation() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (faqItems.length === 0) return;
+
+    gsap.set(faqItems, { y: 30 });
+
+    gsap.to(faqItems, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: '#faqs',
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+        }
+    });
 }
 
 
@@ -594,6 +555,8 @@ function initGalleryAnimation() {
 function initTestimonialsAnimation() {
     const testimonialCards = document.querySelectorAll('.testimonial-card');
     if (testimonialCards.length === 0) return;
+
+    gsap.set(testimonialCards, { y: 50 });
 
     gsap.to(testimonialCards, {
         opacity: 1,
@@ -607,157 +570,34 @@ function initTestimonialsAnimation() {
             toggleActions: 'play none none none'
         }
     });
-
-    // Set initial state
-    gsap.set(testimonialCards, { y: 50 });
 }
 
 
-/* Contact Form & Info - Fade in from below */
-function initContactAnimation() {
-    const formWrapper = document.getElementById('quote-form-wrapper');
-    const contactInfo = document.getElementById('contact-info');
+/* Sub-page content - Generic fade-in for .animate-on-scroll */
+function initSubPageAnimations() {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    if (elements.length === 0) return;
 
-    if (formWrapper) {
-        gsap.to(formWrapper, {
+    elements.forEach(el => {
+        gsap.set(el, { y: 40, opacity: 0 });
+
+        gsap.to(el, {
             opacity: 1,
             y: 0,
-            duration: 0.9,
+            duration: 0.8,
             ease: 'power2.out',
             scrollTrigger: {
-                trigger: '#contact',
-                start: 'top 75%',
+                trigger: el,
+                start: 'top 85%',
                 toggleActions: 'play none none none'
             }
         });
-        gsap.set(formWrapper, { y: 50 });
-    }
-
-    if (contactInfo) {
-        gsap.to(contactInfo, {
-            opacity: 1,
-            y: 0,
-            duration: 0.9,
-            delay: 0.2,
-            ease: 'power2.out',
-            scrollTrigger: {
-                trigger: '#contact',
-                start: 'top 75%',
-                toggleActions: 'play none none none'
-            }
-        });
-        gsap.set(contactInfo, { y: 50 });
-    }
-}
-
-
-/* ============================================== */
-/* 9. BEFORE/AFTER SLIDERS - Drag functionality   */
-/* ============================================== */
-
-function initBeforeAfterSliders() {
-    const sliders = document.querySelectorAll('.before-after-slider');
-
-    sliders.forEach(slider => {
-        const beforeWrapper = slider.querySelector('.before-image-wrapper');
-        const handle = slider.querySelector('.slider-handle');
-
-        if (!beforeWrapper || !handle) return;
-
-        let isDragging = false;
-
-        // Get slider bounds and calculate position
-        function getSliderPosition(clientX) {
-            const rect = slider.getBoundingClientRect();
-            let x = clientX - rect.left;
-            // Clamp between 0 and container width
-            x = Math.max(0, Math.min(x, rect.width));
-            return (x / rect.width) * 100;
-        }
-
-        // Update slider position
-        function updateSlider(percentage) {
-            beforeWrapper.style.width = percentage + '%';
-            handle.style.left = percentage + '%';
-        }
-
-        // Mouse events
-        slider.addEventListener('mousedown', (e) => {
-            e.preventDefault();
-            isDragging = true;
-            slider.classList.add('active');
-            const pct = getSliderPosition(e.clientX);
-            updateSlider(pct);
-        });
-
-        document.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-            const pct = getSliderPosition(e.clientX);
-            updateSlider(pct);
-        });
-
-        document.addEventListener('mouseup', () => {
-            if (isDragging) {
-                isDragging = false;
-                slider.classList.remove('active');
-            }
-        });
-
-        // Touch events for mobile
-        slider.addEventListener('touchstart', (e) => {
-            isDragging = true;
-            slider.classList.add('active');
-            const touch = e.touches[0];
-            const pct = getSliderPosition(touch.clientX);
-            updateSlider(pct);
-        }, { passive: true });
-
-        slider.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            const touch = e.touches[0];
-            const pct = getSliderPosition(touch.clientX);
-            updateSlider(pct);
-        }, { passive: true });
-
-        slider.addEventListener('touchend', () => {
-            isDragging = false;
-            slider.classList.remove('active');
-        });
-
-        // Keyboard accessibility for slider handle
-        const handleCircle = handle.querySelector('div');
-        if (handleCircle) {
-            handleCircle.setAttribute('tabindex', '0');
-            handleCircle.setAttribute('role', 'slider');
-            handleCircle.setAttribute('aria-label', 'Before and after comparison slider');
-            handleCircle.setAttribute('aria-valuemin', '0');
-            handleCircle.setAttribute('aria-valuemax', '100');
-            handleCircle.setAttribute('aria-valuenow', '50');
-
-            handleCircle.addEventListener('keydown', (e) => {
-                const currentLeft = parseFloat(handle.style.left) || 50;
-                let newPosition = currentLeft;
-                const step = 2;
-
-                if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
-                    e.preventDefault();
-                    newPosition = Math.max(0, currentLeft - step);
-                } else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
-                    e.preventDefault();
-                    newPosition = Math.min(100, currentLeft + step);
-                }
-
-                updateSlider(newPosition);
-                handleCircle.setAttribute('aria-valuenow', Math.round(newPosition));
-            });
-        }
     });
 }
 
 
 /* ============================================== */
-/* 10. WHATSAPP BUTTON - Floating button setup    */
+/* 11. WHATSAPP BUTTON - Floating button setup    */
 /* ============================================== */
 
 function initWhatsAppButton() {
@@ -766,9 +606,16 @@ function initWhatsAppButton() {
     if (!whatsappBtn) return;
 
     let btnVisible = false;
-    let btnReady = false; // true after entrance animation completes
+    let btnReady = false;
 
-    // Entrance animation - button appears after 2 seconds
+    if (typeof gsap === 'undefined') {
+        whatsappBtn.style.opacity = '1';
+        whatsappBtn.style.transform = 'scale(1)';
+        btnReady = true;
+        btnVisible = true;
+        return;
+    }
+
     gsap.set(whatsappBtn, { scale: 0, opacity: 0 });
     gsap.to(whatsappBtn, {
         scale: 1,
@@ -779,16 +626,15 @@ function initWhatsAppButton() {
         onComplete: () => {
             btnReady = true;
             btnVisible = true;
-            checkFooterOverlap(); // check immediately after entrance
+            checkFooterOverlap();
         }
     });
 
-    // Hide WhatsApp button when it overlaps the footer
     function checkFooterOverlap() {
         if (!footer || !btnReady) return;
 
         const footerTop = footer.getBoundingClientRect().top;
-        const threshold = window.innerHeight - 100; // 100px margin from bottom
+        const threshold = window.innerHeight - 100;
 
         if (footerTop <= threshold && btnVisible) {
             btnVisible = false;
@@ -819,104 +665,19 @@ function initWhatsAppButton() {
 
 
 /* ============================================== */
-/* 11. WHATSAPP FORM - Build & send via WhatsApp  */
-/* ============================================== */
-
-function initWhatsAppForm() {
-    const form = document.getElementById('quote-form');
-    if (!form) return;
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        // Gather field values
-        const name = form.querySelector('#full-name').value.trim();
-        const phone = form.querySelector('#phone').value.trim();
-        const email = form.querySelector('#email').value.trim();
-        const serviceType = form.querySelector('#service-type').value;
-        const sqft = form.querySelector('#sqft').value;
-        const entireHouse = form.querySelector('input[name="entire_house"]:checked');
-        const details = form.querySelector('#details').value.trim();
-
-        // Validate required fields
-        const required = [
-            { el: form.querySelector('#full-name'), value: name, label: 'Full Name' },
-            { el: form.querySelector('#phone'), value: phone, label: 'Phone' },
-            { el: form.querySelector('#email'), value: email, label: 'Email' },
-            { el: form.querySelector('#service-type'), value: serviceType, label: 'Type of Service' },
-        ];
-
-        let isValid = true;
-
-        required.forEach(field => {
-            if (!field.value) {
-                isValid = false;
-                field.el.classList.add('border-red-500', 'ring-2', 'ring-red-200');
-                // Shake animation
-                gsap.fromTo(field.el, { x: -6 }, { x: 0, duration: 0.4, ease: 'elastic.out(1, 0.3)' });
-            } else {
-                field.el.classList.remove('border-red-500', 'ring-2', 'ring-red-200');
-            }
-        });
-
-        if (!isValid) return;
-
-        // Build formatted WhatsApp message
-        let message = `🏠 *New Quote Request*\n`;
-        message += `──────────────\n`;
-        message += `👤 *Name:* ${name}\n`;
-        message += `📞 *Phone:* ${phone}\n`;
-        message += `📧 *Email:* ${email}\n`;
-        message += `🧹 *Service:* ${serviceType}\n`;
-
-        if (sqft) {
-            message += `📐 *Size:* ${sqft}\n`;
-        }
-
-        if (entireHouse) {
-            message += `🏡 *Entire House:* ${entireHouse.value}\n`;
-        }
-
-        if (details) {
-            message += `──────────────\n`;
-            message += `📝 *Details:*\n${details}\n`;
-        }
-
-        message += `──────────────\n`;
-        message += `Sent from homesolutionsncllc.com`;
-
-        // Open WhatsApp with pre-filled message
-        const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(message)}`;
-        window.open(waUrl, '_blank');
-    });
-
-    // Remove red border on input when user starts typing
-    const inputs = form.querySelectorAll('input, select, textarea');
-    inputs.forEach(input => {
-        input.addEventListener('input', () => {
-            input.classList.remove('border-red-500', 'ring-2', 'ring-red-200');
-        });
-        input.addEventListener('change', () => {
-            input.classList.remove('border-red-500', 'ring-2', 'ring-red-200');
-        });
-    });
-}
-
-
-/* ============================================== */
 /* 12. PERFORMANCE - Resize and visibility        */
 /* ============================================== */
 
-// Refresh ScrollTrigger on window resize (debounced)
 let resizeTimer;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-        ScrollTrigger.refresh();
+        if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.refresh();
+        }
     }, 250);
 }, { passive: true });
 
-// Pause video when tab is not visible to save resources
 document.addEventListener('visibilitychange', () => {
     const heroVideo = document.querySelector('#hero video');
     if (!heroVideo) return;
@@ -924,8 +685,6 @@ document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
         heroVideo.pause();
     } else {
-        heroVideo.play().catch(() => {
-            // Autoplay might be blocked - ignore silently
-        });
+        heroVideo.play().catch(() => {});
     }
 });
