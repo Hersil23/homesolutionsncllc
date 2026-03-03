@@ -664,9 +664,9 @@ html::-webkit-scrollbar {
 
 .service-section .service-img img {
     width: 100%;
-    height: 200px;
+    height: 320px;
     object-fit: cover;
-    object-position: center center;
+    object-position: top center;
     display: block;
 }
 
@@ -693,15 +693,10 @@ html::-webkit-scrollbar {
     max-width: 90%;
 }
 
-/* Recurring image: show heads */
-.service-section .service-img img.img-top {
-    object-position: center top;
-}
-
 /* --- Mobile standard (375px+) --- */
 @media (min-width: 375px) {
     .service-section .service-img img {
-        height: 250px;
+        height: 380px;
     }
 
     .service-section .service-text {
@@ -711,6 +706,10 @@ html::-webkit-scrollbar {
 
 /* --- Mobile large (480px+) --- */
 @media (min-width: 480px) {
+    .service-section .service-img img {
+        height: 400px;
+    }
+
     .service-section .service-text h2 {
         font-size: 1.5rem;
     }
@@ -719,7 +718,7 @@ html::-webkit-scrollbar {
 /* --- Tablet vertical (600px+) --- */
 @media (min-width: 600px) {
     .service-section .service-img img {
-        height: 350px;
+        height: 450px;
     }
 
     .service-section .service-text {
