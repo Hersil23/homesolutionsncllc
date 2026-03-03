@@ -72,12 +72,9 @@ main {
     transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, backdrop-filter 0.5s ease-in-out;
 }
 
-/* Navbar: semi-transparent on mobile so hamburger is always visible */
-@media (max-width: 1023px) {
-    #navbar {
-        background-color: rgba(48, 54, 67, 0.7);
-        backdrop-filter: blur(6px);
-    }
+/* Hamburger icon always visible with drop shadow */
+#mobile-menu-btn {
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.8));
 }
 
 /* Navbar solid state (after scroll) */
