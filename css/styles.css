@@ -81,6 +81,12 @@ main {
 /* Active nav link indicator */
 .nav-link.active {
     color: #c27647;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Nav link hover shadow for readability */
+.nav-link:hover {
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
 }
 
 /* Mobile menu transition */
