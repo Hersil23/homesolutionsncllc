@@ -435,13 +435,12 @@ function initHeroAnimation() {
         defaults: { ease: 'power3.out', duration: 1 }
     });
 
-    gsap.set(['#hero-logo', '#hero-title', '#hero-subtitle', '#hero-badge', '#hero-buttons'], {
+    gsap.set(['#hero-title', '#hero-subtitle', '#hero-badge', '#hero-buttons'], {
         y: 50,
     });
 
     heroTimeline
-        .to('#hero-logo', { opacity: 1, y: 0, duration: 1.2 })
-        .to('#hero-title', { opacity: 1, y: 0 }, '-=0.6')
+        .to('#hero-title', { opacity: 1, y: 0, duration: 1 })
         .to('#hero-subtitle', { opacity: 1, y: 0 }, '-=0.6')
         .to('#hero-badge', { opacity: 1, y: 0 }, '-=0.5')
         .to('#hero-buttons', { opacity: 1, y: 0 }, '-=0.5');

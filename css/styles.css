@@ -614,10 +614,6 @@ html::-webkit-scrollbar {
         font-size: 0.875rem;
     }
 
-    #hero-logo img {
-        height: 5rem;
-    }
-
     .service-card .p-6,
     .service-card .p-5 {
         padding: 0.875rem;
@@ -669,10 +665,6 @@ html::-webkit-scrollbar {
 @media (min-width: 375px) and (max-width: 639px) {
     #hero h1 {
         font-size: 2rem;
-    }
-
-    #hero-logo img {
-        height: 6rem;
     }
 
     /* Contact info email break */
