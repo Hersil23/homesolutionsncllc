@@ -63,15 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /**
  * Initializes the navbar scroll behavior.
- * - On the home page (with #hero): toggles between transparent and solid background
- *   based on scroll position using requestAnimationFrame for performance.
- * - On sub-pages (no #hero): immediately applies solid background.
+ * - On pages with a fullscreen hero (home, services, about, contact): toggles
+ *   between transparent and solid background based on scroll position.
+ * - On pages without a hero: immediately applies solid background.
  */
 function initNavbar() {
     const navbar = document.getElementById('navbar');
     if (!navbar) return;
 
-    const hero = document.getElementById('hero');
+    const hero = document.querySelector('#hero, .services-hero, .about-hero, .contact-hero');
     const scrollThreshold = 80;
 
     if (!hero) {

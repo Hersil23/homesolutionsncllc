@@ -679,7 +679,7 @@ html::-webkit-scrollbar {
 }
 
 .contact-hero img {
-    object-position: center center;
+    object-position: center 20%;
 }
 
 @media (min-width: 480px) {
