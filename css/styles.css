@@ -72,6 +72,14 @@ main {
     transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, backdrop-filter 0.5s ease-in-out;
 }
 
+/* Navbar: semi-transparent on mobile so hamburger is always visible */
+@media (max-width: 1023px) {
+    #navbar {
+        background-color: rgba(48, 54, 67, 0.7);
+        backdrop-filter: blur(6px);
+    }
+}
+
 /* Navbar solid state (after scroll) */
 #navbar.scrolled {
     background-color: #303643;
