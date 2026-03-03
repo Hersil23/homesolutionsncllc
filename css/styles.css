@@ -584,6 +584,12 @@ html::-webkit-scrollbar {
     padding-top: 7rem;
 }
 
+/* Services page hero with background image */
+.services-hero {
+    min-height: 60vh;
+    background-color: #303643;
+}
+
 /* Sub-page service detail cards */
 .service-detail-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -595,7 +601,61 @@ html::-webkit-scrollbar {
 
 
 /* ============================================== */
-/* 16. RESPONSIVE ADJUSTMENTS                     */
+/* 16. SERVICES PAGE - DESKTOP FULL-HEIGHT LAYOUT */
+/* ============================================== */
+
+@media (min-width: 1024px) {
+    .service-section {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .service-section .service-text {
+        display: flex;
+        align-items: center;
+        padding: 3rem 4rem;
+    }
+
+    .service-section .service-text > div {
+        max-width: 36rem;
+    }
+
+    .service-section .service-img {
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+    }
+
+    .service-section .service-img img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    /* Text left, image right */
+    .service-section.img-right .service-text { order: 1; }
+    .service-section.img-right .service-img { order: 2; }
+
+    /* Image left, text right */
+    .service-section.img-left .service-text { order: 2; }
+    .service-section.img-left .service-img { order: 1; }
+}
+
+@media (min-width: 1280px) {
+    .service-section .service-text {
+        padding: 3rem 6rem;
+    }
+}
+
+
+/* ============================================== */
+/* 17. RESPONSIVE ADJUSTMENTS                     */
 /* ============================================== */
 
 /* Extra small screens (below 375px) */
