@@ -102,14 +102,6 @@ main {
     transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, backdrop-filter 0.5s ease-in-out;
 }
 
-/* On mobile, keep navbar transparent even when scrolled */
-@media (max-width: 1023px) {
-    #navbar.scrolled {
-        background-color: transparent;
-        box-shadow: none;
-        backdrop-filter: none;
-    }
-}
 
 /* Small mobile fixes (320px-480px) */
 @media (max-width: 480px) {
