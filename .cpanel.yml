@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/homesolu/public_html
-    - /bin/rsync -av --exclude='.git' --exclude='cgi-bin' . $DEPLOYPATH
+    - /bin/rsync -av --exclude='.git' --exclude='.cpanel.yml' --exclude='cgi-bin' --exclude='site' ./ $DEPLOYPATH/
