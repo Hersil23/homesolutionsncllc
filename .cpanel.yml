@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/homesolu/public_html/site
-    - /bin/rsync -av --delete . $DEPLOYPATH
+    - export DEPLOYPATH=/home/homesolu/public_html
+    - /bin/rsync -av --exclude='.git' --exclude='cgi-bin' . $DEPLOYPATH
