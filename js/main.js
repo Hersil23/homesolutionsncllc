@@ -21,14 +21,14 @@ const BUSINESS = {
     slogan: 'A Cleaner Home Starts Here',
     phone: '(919) 917-4604',
     phoneLink: '9199174604',
-    email: 'info@homesolutionsnc.com',
+    email: 'info@homesolutionsncllc.com',
     address: 'Wake County, NC',
     city: 'Raleigh, NC',
     hours: 'Mon - Sat: 8:00 AM - 6:00 PM',
     serviceAreas: 'Raleigh, Clayton, Garner, Knightdale, Rolesville, Wake Forest, Wendell, and Zebulon',
     whatsapp: '19199174604',
     whatsappMessage: "Hi! I'm interested in your cleaning services.",
-    domain: 'https://www.homesolutionsnc.com',
+    domain: 'https://www.homesolutionsncllc.com',
 };
 
 
@@ -444,7 +444,7 @@ function initContactForm() {
             msg += `Details:\n${message}\n`;
         }
         msg += `---\n`;
-        msg += `Sent from homesolutionsnc.com`;
+        msg += `Sent from homesolutionsncllc.com`;
 
         const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(msg)}`;
         window.open(waUrl, '_blank');
